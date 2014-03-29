@@ -1,0 +1,14 @@
+##################
+# CODING, SERVER #
+##################
+
+
+###################
+# CODING, MISSION #
+###################
+Set default spawn
+	-Hatchet
+	-Flashlight
+	-Bandages x4
+	-Backpack [type?]
+	-Morphine [?]

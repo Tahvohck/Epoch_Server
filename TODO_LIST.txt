@@ -1,0 +1,28 @@
+###################
+# COMPILE NEEDED? #
+###################
+		Yes
+Last: 2014-03-27
+				
+		
+##################
+# CODING, SERVER #
+##################
+Modify compiles\server_playerLogin.sqf
+	-Add method to add default items to backpack
+				
+		
+###################
+# CODING, MISSION #
+###################
+Add:
+	Tow\haul
+	Self bloodbag
+	Spawn bike [Bill F'in Murray]
+	Snap building
+	WAI (Missions)
+
+Edit salvage code
+	-Allow removal of Engines & Fueltanks if player has a crowbar
+
+	
