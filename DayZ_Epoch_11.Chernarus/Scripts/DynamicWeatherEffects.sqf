@@ -29,7 +29,7 @@ _minWeatherChangeTimeMin = 10;
 
 // Maximum time in minutes for the weather (fog and overcast) to change. Must be greater than or equal to _minWeatherChangeTimeMin.
 // (Suggested value: 20).
-_maxWeatherChangeTimeMin = 20;
+_maxWeatherChangeTimeMin = 30;
 
 // Minimum time in minutes that weather (fog and overcast) stays constant between weather changes. Must be less than or equal to 0 and
 // greater than or equal to _minWeatherChangeTimeMin. (Suggested value: 5).
@@ -37,7 +37,7 @@ _minTimeBetweenWeatherChangesMin = 5;
 
 // Maximum time in minutes that weather (fog and overcast) stays unchanged between weather changes. Must be greater than or equal to
 // _minWeatherChangeTimeMin. (Suggested value: 10).
-_maxTimeBetweenWeatherChangesMin = 10;
+_maxTimeBetweenWeatherChangesMin = 40;
 
 // Fog intensity never falls below this value. Must be between 0 and 1 and less than or equal to _maximumFog
 // (0 = no fog, 1 = pea soup). (Suggested value: 0).
@@ -45,7 +45,7 @@ _minimumFog = 0;
 
 // Fog intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumFog
 // (0 = no fog, 1 = pea soup). (Suggested value: 0.8).
-_maximumFog = 0.5;
+_maximumFog = 0.8;
 
 // Overcast intensity never falls below this value. Must be between 0 and 1 and less than or equal to _maximumOvercast
 // (0 = no overcast, 1 = maximum overcast). (Suggested value: 0).
@@ -61,7 +61,7 @@ _minimumRain = 0;
 
 // When raining, rain intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumRain
 // (0 = no rain, 1 = maximum rain intensity). (Suggested value: 0.8);
-_maximumRain = 0.8;
+_maximumRain = 1;
 
 // Wind vector strength never falls below this value. Must be greater or equal to 0 and less than or equal to _maximumWind.
 // (Suggested value: 0);
