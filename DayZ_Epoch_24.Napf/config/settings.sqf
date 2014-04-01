@@ -17,12 +17,12 @@ dayz_maxpos = 26000;
 dayz_MapArea = 18500;		// Default = 10000
 
 //Vehicles
-MaxVehicleLimit = 200;				// Default: 50
-MaxDynamicDebris = 1500;				// Default: 100
+MaxVehicleLimit = 175;				// Default: 50
+MaxDynamicDebris = 1000;				// Default: 100
 DynamicVehicleDamageLow = 0;		// Default: 0
 DynamicVehicleDamageHigh = 100;		// Default: 100
 DynamicVehicleFuelLow = 0;			// Default: 0
-DynamicVehicleFuelHigh = 50;		// Default: 100
+DynamicVehicleFuelHigh = 65;		// Default: 100
 dayz_sellDistance_vehicle = 10;
 dayz_sellDistance_boat = 30;
 dayz_sellDistance_air = 40;
