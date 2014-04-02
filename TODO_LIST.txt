@@ -17,7 +17,6 @@ Modify compiles\server_playerLogin.sqf
 ###################
 Add:
 	Tow\haul
-	Self bloodbag
 	Spawn bike [Bill F'in Murray]
 	Snap building
 	WAI (Missions)

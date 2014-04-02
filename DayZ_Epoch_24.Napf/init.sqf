@@ -29,6 +29,7 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functi
 progressLoadingScreen 0.4;
 //Compile regular functions
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
+call compile preprocessFileLineNumbers "override\custcompiles.sqf";
 progressLoadingScreen 0.5;
 //Compile trader configs
 call compile preprocessFileLineNumbers "server_traders.sqf";
@@ -57,9 +58,15 @@ if (!isDedicated) then {
 	
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
+	
+	//scripts
+	execVM "scripts\service_point.sqf";
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
-//Start Dynamic Weather
-execVM "Scripts\DynamicWeatherEffects.sqf";
-
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
+
+execVM "scripts\DynamicWeatherEffects.sqf";		//Start Dynamic Weather
+//execVM "R3F_ARTY_AND_LOG\init.sqf";				//R3F Artillery and Logistics
+execVM "scripts\skaronametags.sqf";
+
+setViewDistance 2500;

@@ -12,3 +12,12 @@ Set default spawn
 	-Bandages x4
 	-Backpack [type?]
 	-Morphine [?]
+	
+Mods added
+	-Self Bloodbag
+	-Refuel Repair Rearm
+	-R3F Arty and Logistics
+	-Skaronator's nameplates
+	
+Mods coded
+	-Randomized default loadout
