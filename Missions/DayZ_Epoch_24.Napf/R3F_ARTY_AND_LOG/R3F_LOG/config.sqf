@@ -44,7 +44,7 @@ R3F_LOG_CFG_remorqueurs =
 	"Pickup_PK_base",
 	"Offroad_DSHKM_base",
 	"SUV_Base_EP1",
-	"ArmoredSUV_Base_PMC"
+	"ArmoredSUV_Base_PMC",
 	//Other
 	"TowingTractor",
 	"Tractor"
@@ -83,10 +83,13 @@ R3F_LOG_CFG_heliporteurs =
  */
 R3F_LOG_CFG_objets_heliportables =
 [
-	// e.g. : "MyLiftableObjectClassName1", "MyLiftableObjectClassName2"
-	"Air",
-	"Land",
-	"Fishing_Boat", "SeaFox","Smallboat_1","Boat"
+	"Plane",
+	"UH1H_base", "UH1_Base",
+	"UH60_Base",
+	"CH47_base_EP1",
+	"Kamov_Base",
+	"Ka137_Base_PMC",
+	"LandVehicle"
 ];
 
 

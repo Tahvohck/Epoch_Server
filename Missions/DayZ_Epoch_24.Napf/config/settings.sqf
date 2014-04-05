@@ -15,6 +15,7 @@ dayz_fullMoonNights = false;
 dayz_minpos = -1000; 
 dayz_maxpos = 26000;
 dayz_MapArea = 18500;		// Default = 10000
+DZE_requireplot = 0;
 
 //Vehicles
 MaxVehicleLimit = 175;				// Default: 50
