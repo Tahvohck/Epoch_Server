@@ -20,6 +20,8 @@ Add:
 	Spawn bike [Bill F'in Murray]
 	Snap building
 	WAI (Missions)
+	Jukebox
+	A.C.R.E.
 
 Edit salvage code
 	-Allow removal of Engines & Fueltanks if player has a crowbar
