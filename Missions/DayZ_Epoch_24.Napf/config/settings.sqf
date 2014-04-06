@@ -36,7 +36,6 @@ DefaultMagazines = ["ItemBandage","ItemBandage","ItemBandage","ItemBandage",
 DefaultWeapons = ["MeleeFlashlightRed","MeleeHatchet_DZE"]; 
 DefaultBackpack = "DZ_Patrol_Pack_EP1"; 
 DefaultBackpackWeapon = "";
-call compile preprocessFileLineNumbers "config\RandomLoadout.sqf";
 
 //Unorganized
 DZE_BackpackGuard = false; //Default = True, deletes backpack contents if logging out or losing connection beside another player if set to true.
