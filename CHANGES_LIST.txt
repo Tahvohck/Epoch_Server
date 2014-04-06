@@ -1,6 +1,12 @@
 ##################
 # CODING, SERVER #
 ##################
+Mods Added
+	-Wicked AI
+		-Mission set https://www.dropbox.com/s/i5s3hghez8yg4t7/missions.zip
+	-MasterKey (server parts)
+		
+Mods Coded
 
 
 ###################
@@ -21,8 +27,9 @@ Mods added
 	-R3F Arty and Logistics
 		-Arty Disabled
 	-Skaronator's nameplates
-	-Wicked AI
-		-Mission set https://www.dropbox.com/s/i5s3hghez8yg4t7/missions.zip
+	-MasterKey
+		-Claim vehicle: 50oz Silver
+		-Change locks: Tin bar
 	
 Mods coded
 	-Randomized default loadout
