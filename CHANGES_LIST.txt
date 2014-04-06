@@ -16,7 +16,10 @@ Set default spawn
 Mods added
 	-Self Bloodbag
 	-Refuel Repair Rearm
+		-10oz silver refuel
+		-Rearm disabled
 	-R3F Arty and Logistics
+		-Arty Disabled
 	-Skaronator's nameplates
 	
 Mods coded
