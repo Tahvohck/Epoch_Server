@@ -19,11 +19,18 @@ Add:
 	Tow\haul
 	Spawn bike [Bill F'in Murray]
 	Snap building
-	WAI (Missions)
 	Jukebox
 	A.C.R.E.
 
-Edit salvage code
+Edit:
 	-Allow removal of Engines & Fueltanks if player has a crowbar
+	-Dynamic fuel prices
+				
+		
+################
+# UNDETERMINED #
+################
+Configure:
+	-Wicked AI
 
 	

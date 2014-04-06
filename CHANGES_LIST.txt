@@ -21,6 +21,8 @@ Mods added
 	-R3F Arty and Logistics
 		-Arty Disabled
 	-Skaronator's nameplates
+	-Wicked AI
+		-Mission set https://www.dropbox.com/s/i5s3hghez8yg4t7/missions.zip
 	
 Mods coded
 	-Randomized default loadout
