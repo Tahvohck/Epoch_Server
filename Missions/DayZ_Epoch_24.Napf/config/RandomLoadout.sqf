@@ -43,10 +43,12 @@ for [{_i=0},{_i<_numDrinks},{_i=_i+1}] do {
 DefaultMagazines = _mags;
 
 //Tools
+_luckyHiker = ((floor random 3) == 0);
 _luckyMechanic = ((floor random 20) == 0);
 _luckyDigger = ((floor random 50) == 0);
 _luckySeer = ((floor random 100) == 0);
 _wepsAndTools = ["MeleeHatchet_DZE", "ItemFlashlightRed"];
+if (_luckyHiker) then {_wepsAndTools = _wepsAndTools + ["ItemMap"]};
 if (_luckyMechanic) then {_wepsAndTools = _wepsAndTools + ["ItemToolbox","ItemCrowbar"]};
 if (_luckyDigger) then {_wepsAndTools = _wepsAndTools + ["ItemEtool"]};
 if (_luckySeer) then {_wepsAndTools = _wepsAndTools + ["NVGoggles"]};
