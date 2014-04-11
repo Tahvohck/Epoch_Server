@@ -18,13 +18,13 @@ private ["_bloodAmount","_humanityBool","_infectionChance","_humanityNegBool","_
 // Config Start-----------------------------------------------------------------------------------------------------------------------//
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-_bloodAmount = 4000; // Amount of blood to give to player
-_bloodbagUseTime = 30; // Amount of time it takes in second for the player to use the self bloodbag
+_bloodAmount = 6000; // Amount of blood to give to player
+_bloodbagUseTime = 10; // Amount of time it takes in second for the player to use the self bloodbag
 _bloodbagLastUsedTime = 60; // Amount of time in seconds before player can use self bloodbag again after a succesful use
 
 _infectionChance = 10; // Percent chance of player infection on self bloodbag (10 = 10% | 2 = 50% | 1 = 100%)
 _infectedLifeBool = true; // Whether the player can loose life if infected (True = On | False = off)
-_infectedLifeLost = 1000; // Amount of life to loose in becomes infected
+_infectedLifeLost = 100; // Amount of life to loose in becomes infected
 
 _humanityBool = false; // Whether the player can get humanity from giving self a bloodbag (True = On | False = off)
 _humanityAmount = 50; // Amount of humanity to give player if _humanityBool is true (250 is default for normal bloodbags)
