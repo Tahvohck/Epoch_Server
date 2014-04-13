@@ -1,6 +1,7 @@
 private ["_maxRange","_humanitycheck","_humanity","_skaroTag","_cursorTarget","_bandit","_hero","_color","_string","_targetControl","_untrustworthy"];
 //Created by Skaronator - http://www.skaronator.com - Version 1.3
 Waituntil{!isNull player};
+disableSerialization;
 
  
 _display = uiNamespace getVariable 'DAYZ_GUI_display';
