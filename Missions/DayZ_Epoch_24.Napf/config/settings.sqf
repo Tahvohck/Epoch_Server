@@ -16,10 +16,11 @@ dayz_minpos = -1000;
 dayz_maxpos = 26000;
 dayz_MapArea = 18500;		// Default = 10000
 DZE_requireplot = 0;
+DZE_BuildOnRoads = false;	// Default: False
 
 //Vehicles
 MaxVehicleLimit = 175;				// Default: 50
-MaxDynamicDebris = 1000;				// Default: 100
+MaxDynamicDebris = 750;				// Default: 100
 DynamicVehicleDamageLow = 0;		// Default: 0
 DynamicVehicleDamageHigh = 100;		// Default: 100
 DynamicVehicleFuelLow = 0;			// Default: 0
@@ -41,7 +42,6 @@ DefaultBackpackWeapon = "";
 DZE_BackpackGuard = false; //Default = True, deletes backpack contents if logging out or losing connection beside another player if set to true.
 DZE_BuildingLimit = 150; //Default = 150, decides how many objects can be built on the server before allowing any others to be built. Change value for more buildings.
 DZE_TRADER_SPAWNMODE = false; //Vehicles bought with traders will parachute in instead of just spawning on the ground.
-DZE_BuildOnRoads = false; // Default: False
 
 //Events
 EpochEvents = 
