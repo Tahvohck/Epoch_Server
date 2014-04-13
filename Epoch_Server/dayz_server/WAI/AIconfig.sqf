@@ -43,46 +43,46 @@ ai_banditkills_gain = True;
 /// Allows you to set a custom skill array for units. (True: will use these arrays. False: will use number in spawn array)
 ai_custom_skills = True;
 
-/// Custom skill array. Use 0 to use this with ai_custom_skills = True 
+/// Custom skill array. Use 0 to use this with ai_custom_skills = True
 ai_custom_array1 = [
-["aimingAccuracy",0.60],
-["aimingShake",0.60],
-["aimingSpeed",1.00],
+["aimingAccuracy",0.10],
+["aimingShake",0.10],
+["aimingSpeed",0.50],
 ["endurance",1.00],
-["spotDistance",1.00],
+["spotDistance",0.40],
 ["spotTime",1.00],
-["courage",1.00],
+["courage",0.25],
 ["reloadSpeed",1.00],
-["commanding",1.00],
-["general",1.00]
+["commanding",0.30],
+["general",0.10]
 ];
 
-/// Custom skill array. Use 1 to use this with ai_custom_skills = True 
+/// Custom skill array. Use 1 to use this with ai_custom_skills = True
 ai_custom_array2 = [
-["aimingAccuracy",0.15],
-["aimingShake",0.20],
-["aimingSpeed",1.00],
+["aimingAccuracy",0.10],
+["aimingShake",0.10],
+["aimingSpeed",0.50],
 ["endurance",1.00],
-["spotDistance",1.00],
+["spotDistance",0.40],
 ["spotTime",1.00],
-["courage",1.00],
+["courage",0.25],
 ["reloadSpeed",1.00],
-["commanding",1.00],
-["general",1.00]
+["commanding",0.30],
+["general",0.10]
 ];
 
-/// Custom skill array. Use 2 to use this with ai_custom_skills = True 
+/// Custom skill array. Use 2 to use this with ai_custom_skills = True
 ai_custom_array3 = [
-["aimingAccuracy",0.60],
-["aimingShake",0.60],
-["aimingSpeed",1.00],
+["aimingAccuracy",0.10],
+["aimingShake",0.10],
+["aimingSpeed",0.50],
 ["endurance",1.00],
-["spotDistance",1.00],
+["spotDistance",0.40],
 ["spotTime",1.00],
-["courage",1.00],
+["courage",0.25],
 ["reloadSpeed",1.00],
-["commanding",1.00],
-["general",1.00]
+["commanding",0.30],
+["general",0.10]
 ];
 
 /// Arrays used in "Random" custom skill 
@@ -97,16 +97,16 @@ ai_static_skills = True;
 
 /// Custom skill array. Use this with ai_static_skills = True;
 ai_static_array = [
-["aimingAccuracy",0.15],
-["aimingShake",0.20],
+["aimingAccuracy",0.10],
+["aimingShake",0.10],
 ["aimingSpeed",0.50],
 ["endurance",1.00],
-["spotDistance",1.00],
+["spotDistance",0.40],
 ["spotTime",1.00],
-["courage",1.00],
+["courage",0.40],
 ["reloadSpeed",1.00],
-["commanding",1.00],
-["general",1.00]
+["commanding",0.40],
+["general",0.10]
 ];
 
 ///////////////////////////////////////////////////////
