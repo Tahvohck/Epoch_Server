@@ -63,3 +63,5 @@ if (!isDedicated) then {
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
 #include "script_init.sqf"
+
+setViewDistance 2500;
