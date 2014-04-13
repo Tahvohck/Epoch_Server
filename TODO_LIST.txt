@@ -23,7 +23,7 @@ Add:
 	A.C.R.E.
 
 Edit:
-	-Allow removal of Engines & Fueltanks if player has a crowbar
+	-Allow removal of Engines & Fueltanks if player has a crowbar (dayz_code/actions/salvage_vehicle.sqf)
 	-Dynamic fuel prices
 	-MasterKey: Change this to "[] call player_checkAndRemoveItems" so that pricing is less stupid.
 				
