@@ -258,7 +258,7 @@ ai_skin = [
 // "FR_Rodriguez_DZ",
 // "CZ_Soldier_Sniper_EP1_DZ",
 // "Graves_Light_DZ",
-"Bandit2_DZ",
+"Bandit2_DZ"
 // "SurvivorWcombat_DZ"
 ];
 //////////////////////////////////////////////////////
