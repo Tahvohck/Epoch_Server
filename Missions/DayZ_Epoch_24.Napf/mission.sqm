@@ -1188,67 +1188,67 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={1511.1515,6.4048538,11479.399};
+			position[]={14445.211,9.7531509,2869.3335};
 			name="spawn0";
 			type="Empty";
 		};
 		class Item3
 		{
-			position[]={6946.2808,7.0185013,17384.557};
+			position[]={18423.564,159.82271,2136.4861};
 			name="spawn1";
 			type="Empty";
 		};
 		class Item4
 		{
-			position[]={5410.916,7.2133398,16675.912};
+			position[]={6733.1089,15.006038,16603.771};
 			name="spawn2";
 			type="Empty";
 		};
 		class Item5
 		{
-			position[]={4672.4092,8.506402,14940.254};
+			position[]={4648.1177,12.571764,14928.115};
 			name="spawn3";
 			type="Empty";
 		};
 		class Item6
 		{
-			position[]={2719.9617,3.2610674,12226.175};
+			position[]={1885.7256,32.005634,10288.379};
 			name="spawn4";
 			type="Empty";
 		};
 		class Item7
 		{
-			position[]={12231.441,2.585845,16319.117};
+			position[]={11026.948,15.146329,15538.322};
 			name="spawn5";
 			type="Empty";
 		};
 		class Item8
 		{
-			position[]={4104.0498,22.422367,13025.828};
+			position[]={4682.7534,26.835196,12304.788};
 			name="spawn6";
 			type="Empty";
 		};
 		class Item9
 		{
-			position[]={1460.7332,0.55348521,10583.732};
+			position[]={2655.5076,59.334221,8036.4307};
 			name="spawn7";
 			type="Empty";
 		};
 		class Item10
 		{
-			position[]={10282.8,23.0424,18449.203};
+			position[]={15271.334,15.948803,13838.635};
 			name="spawn8";
 			type="Empty";
 		};
 		class Item11
 		{
-			position[]={12861.892,2.1743674,14849.523};
+			position[]={18468.752,16.518368,9634.8877};
 			name="spawn9";
 			type="Empty";
 		};
 		class Item12
 		{
-			position[]={10709.255,33.675358,17085.104};
+			position[]={9115.9395,0.67704189,18136.621};
 			name="spawn10";
 			type="Empty";
 		};
@@ -1475,20 +1475,20 @@ class Mission
 			};
 		};
 		class Item9
-        		{
-            		position[]={15128.379,19.974716,16421.879};
-            		activationBy="WEST";
-            		repeating=1;
-            		interruptable=1;
-            		age="UNKNOWN";
-            		name="AWOL";
-            		expCond="(player distance awol) < 75;";
-            		expActiv="TitleText[""Now Entering Aircraft Vendor"",""PLAIN DOWN""]; canbuild = false;";
-            		expDesactiv="TitleText[""Now Leaving Aircraft Vendor"",""PLAIN DOWN""]; canbuild = true;";
-            		class Effects
-            		{
-            		};
-	        };		
+		{
+			position[]={15128.379,19.974716,16421.879};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="AWOL";
+			expCond="(player distance awol) < 75;";
+			expActiv="TitleText[""Now Entering Aircraft Vendor"",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText[""Now Leaving Aircraft Vendor"",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+			};
+		};
 	};
 };
 class Intro
