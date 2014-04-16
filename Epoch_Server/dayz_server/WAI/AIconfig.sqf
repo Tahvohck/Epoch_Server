@@ -19,7 +19,7 @@ ai_patrol_radius = 300;
 ai_patrol_radius_wp = 10;
 
 /// Sets behavior of AI groups 
-ai_combatmode = "RED";
+ai_combatmode = "YELLOW";
 ai_behaviour = "SAFE";
 
 ///////////////////////////////////////////////////////
@@ -165,9 +165,7 @@ ai_wep1 = [
 ["AK_107_pso","30Rnd_545x39_AK"], 
 ["M16A4_ACG","30Rnd_556x45_Stanag"], 
 ["Sa58V_RCO_EP1","30Rnd_762x39_AK47"], 
-["SCAR_L_STD_Mk4CQT","30Rnd_556x45_Stanag"], 
-["BAF_L86A2_ACOG","30Rnd_556x45_Stanag"], 
-["M4A1_AIM_SD_camo","30Rnd_556x45_StanagSD"], 
+["BAF_L86A2_ACOG","30Rnd_556x45_Stanag"],  
 ["M14_EP1","20Rnd_762x51_DMR"], 
 ["M8_sharpshooter","30Rnd_556x45_Stanag"]
 ];
@@ -187,12 +185,10 @@ ai_wep2 = [
 /// 3 ///
 ai_wep3 = [ 
 ["SCAR_H_STD_EGLM_Spect","20rnd_762x51_B_SCAR"], 
-["M110_NVG_EP1","20rnd_762x51_B_SCAR"], 
 ["SCAR_H_LNG_Sniper_SD","20rnd_762x51_SB_SCAR"], 
 ["SVD_CAMO","10Rnd_762x54_SVD"], 
 ["VSS_Vintorez","20Rnd_9x39_SP5_VSS"], 
-["DMR","20Rnd_762x51_DMR"], 
-["M40A3","5Rnd_762x51_M24"]
+["DMR","20Rnd_762x51_DMR"]
 ];
 
 /// 4 ///

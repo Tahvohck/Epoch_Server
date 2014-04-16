@@ -124,7 +124,7 @@ civil_vehicles = [
 ];
 
 // Number of guns to spawn in ammo boxes 
-wai_mission_numberofguns = 8;
+wai_mission_numberofguns = 4;
 // classnames of guns to spawn in ammo boxes (only class weapons)
 ammo_box_guns = [
 "M9SD",
@@ -179,11 +179,77 @@ ammo_box_tools =[
 ];
 
 // Number of items to spawn in ammo boxes 
-wai_mission_numberofitems = 10;
+wai_mission_numberofitems = 40;
 // classnames of items to spawn in ammo boxes (only type magazine will work here)
 ammo_box_items =[
 "ItemBandage",
-"ItemSodaCoke"
+"ItemPainkiller",
+"ItemMorphine",
+
+//17 possible food items
+"FoodMRE",
+"FoodPistachio",
+"FoodNutmix",
+"FoodCanBakedBeans",
+"FoodCanFrankBeans",
+"FoodCanSardines",
+"FoodCanPaste",
+"FoodCanGriff",
+"FoodCanBadguy",
+"FoodCanBoneboy",
+"FoodCanCorn",
+"FoodCanCurgon",
+"FoodCanFraggleos",
+"FoodCanHerpy",
+"FoodCanOrlok",
+"FoodCanPowell",
+"FoodCanTylers",
+
+//13 possible drink items
+"ItemWaterbottle",
+"ItemSodaCoke",
+"ItemSodaPepsi",
+"ItemSodaMdew",
+"ItemSodaMtngreen",
+"ItemSodaR4z0r",
+"ItemSodaClays",
+"ItemSodaSmasht",
+"ItemSodaDrwaste",
+"ItemSodaLemonade",
+"ItemSodaLvg",
+"ItemSodaMzly",
+"ItemSodaRabbit",
+
+//15 possible money items
+"ItemGoldBar10oz",
+"ItemGoldBar9oz",
+"ItemGoldBar8oz",
+"ItemGoldBar7oz",
+"ItemGoldBar6oz",
+"ItemGoldBar5oz",
+"ItemGoldBar4oz",
+"ItemGoldBar3oz",
+"ItemGoldBar2oz",
+"ItemGoldBar1oz",
+"ItemSilverBar10oz",
+"ItemSilverBar9oz",
+"ItemSilverBar8oz",
+"ItemSilverBar7oz",
+"ItemSilverBar1oz",
+
+"PartFueltank", "PartFueltank", "PartFueltank",
+"PartWheel",    "PartWheel",    "PartWheel",
+"PartGlass",    "PartGlass",    "PartGlass",
+"PartGeneric",  "PartGeneric",  "PartGeneric",
+"PartEngine",   "PartEngine",   "PartEngine",
+
+"PartPlankPack",
+"PartPlywoodPack",
+"CinderBlocks",
+
+"forest_net_kit",
+
+"ItemDocument"
 ];
 
 //////////////////////////////////////////////////////////////////////
