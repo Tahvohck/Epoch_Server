@@ -24,7 +24,7 @@ ai_behaviour = "SAFE";
 
 ///////////////////////////////////////////////////////
 /// Turns on AI info sharing (Makes them very hard even on low skill settings)
-ai_ahare_info = True;
+ai_ahare_info = false;
 
 /// Distance AI will let other enemies know of your position (currently only on kill) 
 ai_share_distance = 25;
