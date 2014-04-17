@@ -15,9 +15,10 @@ Mods Coded
 Set default spawn
 	-Hatchet
 	-Flashlight
+	-Food/drink, 1-3 each
 	-Bandages x4
-	-Backpack [type?]
-	-Morphine [?]
+	-Morphine
+	-Backpack [random, small]
 	
 Mods added
 	-Self Bloodbag
@@ -30,6 +31,7 @@ Mods added
 	-MasterKey
 		-Claim vehicle: 50oz Silver
 		-Change locks: Tin bar
+	-Build Snapping
 	
 Mods coded
 	-Randomized default loadout
