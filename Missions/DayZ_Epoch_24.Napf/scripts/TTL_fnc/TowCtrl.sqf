@@ -36,7 +36,7 @@ switch (toLower _action) do {
 					_pTBC = [_t select 0, _t select 2, _t select 1];
 					_t = nil;
 
-					player globalChat format["Towing %1 to %2...", _aName, _tName];
+					titleText [format["Towing %1 to %2...", _aName, _tName], "PLAIN DOWN"];
 					//Player animation and positioning. Originally stolen shamelessly from R3F, now mostly
 					//my own algo.
 					player attachTo [_tVeh, [
@@ -66,10 +66,10 @@ switch (toLower _action) do {
 					detach player;
 					["cancel"] execVM ""+ttl_loc+"TargetCtrl.sqf";
 					if (-1 != _ID) then {player removeAction _ID};
-				} else {player globalChat format["%1 is not powerful enough to tow a %2", _tName, _aName]};
-			} else {player globalChat format["%1 cannot tow %2, already towing a %3",
-												_tName, _aName, _tVeh getVariable ["TowedName", "<That ain't right>"]]};
-		} else {player globalChat format["%1 is too far away from %2", _aName, _tName]};
+				} else {titleText [format["%1 is not powerful enough to tow a %2", _tName, _aName], "PLAIN DOWN"]};
+			} else {titleText [format["%1 cannot tow %2, already towing a %3",
+								_tName, _aName, _tVeh getVariable ["TowedName", "<That ain't right>"]], "PLAIN DOWN"]};
+		} else {titleText [format["%1 is too far away from %2", _aName, _tName], "PLAIN DOWN"]};
 	};
 	case "untow": {
 		detach _aVeh;

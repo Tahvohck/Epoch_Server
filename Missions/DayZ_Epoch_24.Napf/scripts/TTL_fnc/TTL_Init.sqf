@@ -146,20 +146,26 @@ while {ttl_inited} do {
 		};
 		//Quick detach
 		if (_insideVeh getVariable ["beingTowed", false] && ttl_QuickDetach == -1) then {
-				_title = format["<t color="+RED+">Quick detach</t>"];
-				ttl_QuickDetach = _insideVeh addAction [_title,ttl_loc+"Quickdetach.sqf",
-														[],	0, false, false];
+			_title = format["<t color="+RED+">Quick detach</t>"];
+			ttl_QuickDetach = _insideVeh addAction [_title,ttl_loc+"Quickdetach.sqf",
+													[],	0, false, false];
+		};
+		if (ttl_QuickDetach != -1 && !(_insideVeh getVariable ["beingTowed", false] || _insideVeh getVariable ["isTowing", false])) then {
+			_insideVeh removeAction ttl_QuickDetach;
+			ttl_QuickDetach = -1;
 		};
 		
-		if (!(_insideVeh getVariable ["isTowing", false])) then {
+		if (!(_insideVeh getVariable ["isTowing", false]) && !(_insideVeh getVariable ["beingTowed", false])) then {
 			if (getPosATL _insideVeh select 2 > 5 && getPosATL _insideVeh select 2 < ttl_towRadius) then {
 				//Inside of tow height
-				if (!isNull ttl_selectedObject && ttl_LiftOp == -1 && ttl_selectedObject distance _insideVeh < ttl_towRadius) then {
+				if (!isNull ttl_selectedObject && ttl_selectedObject distance _insideVeh < ttl_towRadius) then {
 					//Guided tow: selected object in range.
-					_targName	= getText (configFile >> "CfgVehicles" >> typeOf ttl_selectedObject >> "displayName");
-					_title = format["<t color="+YELLOW+">Lift %1 (Guided)</t>", _targName];
-					ttl_LiftOp = _insideVeh addAction [_title,ttl_loc+"LiftCtrl.sqf",
-															["Lift", ttl_selectedObject, _insideVeh], 3, false, false];
+					if (ttl_LiftOp == -1) then {
+						_targName	= getText (configFile >> "CfgVehicles" >> typeOf ttl_selectedObject >> "displayName");
+						_title = format["<t color="+YELLOW+">Lift %1 (Guided)</t>", _targName];
+						ttl_LiftOp = _insideVeh addAction [_title,ttl_loc+"LiftCtrl.sqf",
+																["Lift", ttl_selectedObject, _insideVeh], 3, false, false];
+					};
 				}else{
 					//find nearest object, remove option if nearest object does not match object option
 					_nearObject = nearestObjects [_insideVeh, ["LandVehicle", "Ship", "Air"], ttl_towRadius] select 1;
@@ -184,20 +190,21 @@ while {ttl_inited} do {
 				ttl_LiftOp = -1;
 			};
 		}else{
-			//Already towing/lifting something, handle drop options.
-			if (typeOf _insideVeh isKindOf "Air") then {
-				if (ttl_DropOp == -1) then {
-					_liftName = _insideVeh getVariable ["TowedName", ""];
-					_title = format["<t color="+YELLOW+">Drop %1</t>", _liftName];
-					ttl_DropOp = _insideVeh addAction [_title,ttl_loc+"LiftCtrl.sqf",
-															["Drop"], 3, false, false];
-				};
-			}else{
-				if (ttl_QuickDetach == -1) then {
-					_title = format["<t color="+RED+">Quick detach</t>"];
-					ttl_QuickDetach = _insideVeh addAction [_title,ttl_loc+"Quickdetach.sqf",
-															[],	0, false, false];
-			}};
+			if (_insideVeh getVariable ["isTowing", false]) then {
+				//Already towing/lifting something, handle drop options.
+				if (typeOf _insideVeh isKindOf "Air") then {
+					if (ttl_DropOp == -1) then {
+						_liftName = _insideVeh getVariable ["TowedName", ""];
+						_title = format["<t color="+YELLOW+">Drop %1</t>", _liftName];
+						ttl_DropOp = _insideVeh addAction [_title,ttl_loc+"LiftCtrl.sqf",
+																["Drop"], 3, false, false];
+					};
+				}else{
+					if (ttl_QuickDetach == -1) then {
+						_title = format["<t color="+RED+">Quick detach</t>"];
+						ttl_QuickDetach = _insideVeh addAction [_title,ttl_loc+"Quickdetach.sqf",
+																[],	0, false, false];
+			}}};
 		};
 	};
 	
