@@ -1,5 +1,5 @@
 // Time between missions (seconds)
-wai_mission_timer = 1800;
+wai_mission_timer = 600;
 
 // How long before a mission times out (seconds)
 wai_mission_timeout = 3600;
