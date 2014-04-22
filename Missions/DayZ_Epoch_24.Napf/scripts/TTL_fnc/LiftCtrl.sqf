@@ -54,4 +54,4 @@ switch (toLower _action) do {
 		ttl_DropOp = -1;
 	};
 	default {diag_log format["%1", _action];};
-};	
+};

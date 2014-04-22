@@ -124,6 +124,7 @@ ttl_weightClass = [
 ];
 
 ttl_towRadius	= 30;		//Radius in meters within which towing works.
+ttl_maxHookSpeed= 60;
 ttl_mRefRate	= .25;		//How long to wait in seconds between attempts to add menu items.
 ttl_canChain	= 0;		//Not implemented.
 //This is the directory that TTL will look for its files in. Keep in mind that the function files are

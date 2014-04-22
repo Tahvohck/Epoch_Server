@@ -115,7 +115,7 @@ while {ttl_inited} do {
 			if (ttl_selectOp == -1 && ttl_selectedObject != _lastVeh && _cWeight != -1  && !(_lastVeh getVariable ["beingTowed", false])) then {
 				_title = format["<t color="+YELLOW+">Tow %1...</t>", _cName];
 				ttl_selectOp = player addAction [_title, ttl_loc+"TargetCtrl.sqf",
-												["sel", cursorTarget], 3];
+												["sel", cursorTarget], 0];
 			};
 			if (ttl_UntowOp == -1 && _lastVeh getVariable ["beingTowed", false]) then {
 				_title = format["<t color="+YELLOW+">Untow %1</t>", _cName];
@@ -177,7 +177,7 @@ while {ttl_inited} do {
 						_insideVeh removeAction ttl_LiftOp;
 						ttl_LiftOp = -1;
 					};
-					if (!isNull _nearObject && ttl_LiftOp == -1) then {
+					if (!isNull _nearObject && ttl_LiftOp == -1 && speed _insideVeh <= ttl_maxHookSpeed) then {
 						_targName	= getText (configFile >> "CfgVehicles" >> typeOf _nearObject >> "displayName");
 						_sNearObject = _nearObject;
 						_title = format["<t color="+YELLOW+">Lift %1</t>", _targName];
