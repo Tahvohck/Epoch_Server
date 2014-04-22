@@ -36,7 +36,7 @@ switch (toLower _action) do {
 			["cancel"] execVM ""+ttl_loc+"TargetCtrl.sqf";
 			_lVeh removeAction _ID;
 			ttl_LiftOp = -1;
-		} else {titleText format["%1 is not powerful enough to lift a %2", _lName, _aName], "PLAIN DOWN"]};
+		} else {titleText [format["%1 is not powerful enough to lift a %2", _lName, _aName], "PLAIN DOWN"]};
 	};
 	case "drop": {
 		_t		= velocity _aVeh;
