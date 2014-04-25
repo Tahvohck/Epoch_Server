@@ -204,7 +204,10 @@ while {ttl_inited} do {
 						_title = format["<t color="+RED+">Quick detach</t>"];
 						ttl_QuickDetach = _insideVeh addAction [_title,ttl_loc+"Quickdetach.sqf",
 																[],	0, false, false];
-			}}};
+			}}}else{
+				_insideVeh removeAction ttl_DropOp;
+				ttl_DropOp = -1;
+			};
 		};
 	};
 	

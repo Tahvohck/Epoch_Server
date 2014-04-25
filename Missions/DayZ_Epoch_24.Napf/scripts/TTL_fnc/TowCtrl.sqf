@@ -41,7 +41,7 @@ switch (toLower _action) do {
 					//my own algo.
 					player attachTo [_tVeh, [
 						(boundingBox _tVeh select 1 select 0) + 1,
-						(boundingBox _tVeh select 0 select 1) + .25,
+						(boundingBox _tVeh select 0 select 1),
 						(_tVeh worldToModel (player modelToWorld _pTBC)) select 2
 					]];
 					player setDir 270 + 30; //First at 90° to car, inwards, then rotated towards the hitch.
@@ -72,10 +72,7 @@ switch (toLower _action) do {
 		} else {titleText [format["%1 is too far away from %2", _aName, _tName], "PLAIN DOWN"]};
 	};
 	case "untow": {
-		_t		= velocity _aVeh;
-		_vel 	= [_t select 0, _t select 2, _t select 1];
 		detach _aVeh;
-		_aVeh setVelocity _vel;
 		_tVeh = _aVeh getVariable ["TowedBy", objNull];
 		_tVeh setVariable ["isTowing", false, true];
 		_tVeh setVariable ["TowedName", objNull, true];
