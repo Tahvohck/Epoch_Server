@@ -40,7 +40,7 @@ switch (toLower _action) do {
 					//Player animation and positioning. Originally stolen shamelessly from R3F, now mostly
 					//my own algo.
 					player attachTo [_tVeh, [
-						(boundingBox _tVeh select 1 select 0) + 1,
+						(boundingBox _tVeh select 1 select 0) + 1.25,
 						(boundingBox _tVeh select 0 select 1),
 						(_tVeh worldToModel (player modelToWorld _pTBC)) select 2
 					]];
