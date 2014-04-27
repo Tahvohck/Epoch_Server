@@ -118,6 +118,7 @@ ttl_weightClass = [
 	"AW159_Lynx_BAF", 7,
 	//Defaults
 	"Tank", 10,
+	"StaticWeapon", -1,
 	"LandVehicle", 0,
 	"Air", -1,
 	"Ship", -1
