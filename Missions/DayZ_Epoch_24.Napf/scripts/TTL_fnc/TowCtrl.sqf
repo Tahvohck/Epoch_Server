@@ -65,6 +65,7 @@ switch (toLower _action) do {
 					
 					detach player;
 					["cancel"] execVM ""+ttl_loc+"TargetCtrl.sqf";
+					[_tVeh] spawn ttl_carMon;
 					if (-1 != _ID) then {player removeAction _ID};
 				} else {titleText [format["%1 is not powerful enough to tow a %2", _tName, _aName], "PLAIN DOWN"]};
 			} else {titleText [format["%1 cannot tow %2, already towing a %3",

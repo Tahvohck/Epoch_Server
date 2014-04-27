@@ -63,6 +63,7 @@ ttl_gCorClass = {
 	};
 	_SCC
 };
+ttl_carMon = compile preprocessFileLineNumbers (ttl_loc+"carry_monitor.sqf");
 
 sleep ttl_mRefRate * 5;
 ttl_inited = true;
