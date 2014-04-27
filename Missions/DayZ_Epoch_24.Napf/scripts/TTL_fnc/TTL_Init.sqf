@@ -27,6 +27,7 @@ ttl_LiftOp		=	-1;	//
 ttl_DropOp		=	-1;	//
 ttl_SelectOp	=	-1;	//
 ttl_CancelOp	=	-1;	//
+ttl_AllIDS		=	[];
 
 ttl_selectedObject	=	objNull;	//
 ttl_selectedObjWght	=	-1;			//
@@ -212,5 +213,6 @@ while {ttl_inited} do {
 		};
 	};
 	
+	ttl_AllIDs = [ttl_TowOp,ttl_UntowOp,ttl_QuickDetach,ttl_LiftOp,ttl_DropOp,ttl_SelectOp,ttl_CancelOp];
 	sleep ttl_mRefRate;
 };
