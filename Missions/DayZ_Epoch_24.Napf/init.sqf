@@ -59,7 +59,7 @@ if (!isDedicated) then {
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 };
-#include "\z\addons\dayz_code\system\REsec.sqf"
+//#include "\z\addons\dayz_code\system\REsec.sqf"
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
 #include "script_init.sqf"
