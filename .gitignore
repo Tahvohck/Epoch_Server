@@ -1,2 +1,4 @@
 Packed/
 *.lnk
+**/AH.sqf
+**/AHconfig.sqf
