@@ -1,6 +1,16 @@
 //##############
 //## Settings ##
 //##############
+//This is the directory that TTL will look for its files in. Keep in mind that the function files are
+//NOT prefixed if you move them around.
+ttl_loc			= "scripts\TTL_fnc\";
+
+ttl_towRadius		= 30;	//Radius in meters within which towing works.
+ttl_minLiftHeight	= 5;	//Minimum height in meters that you must be off the ground to tow.
+ttl_maxLiftHeight	= 20;	//Maximum height in meters that you can be off the ground and tow. (Doubles as a max lift range)
+ttl_maxHookSpeed	= 60;   
+ttl_mRefRate		= .25;	//How long to wait in seconds between attempts to add menu items.
+ttl_canChain		= 0;	//Not implemented.
 
 //The next three settings define lifting/towing behavior. If the lift/tow class is higher than or
 //		or equal to the weight class, it can perform a lift/tow.
@@ -118,18 +128,9 @@ ttl_weightClass = [
 	"AW159_Lynx_BAF", 7,
 	//Defaults
 	"Tank", 10,
-	"StaticWeapon", -1,
 	"LandVehicle", 0,
 	"Air", -1,
 	"Ship", -1
 ];
-
-ttl_towRadius	= 30;		//Radius in meters within which towing works.
-ttl_maxHookSpeed= 60;
-ttl_mRefRate	= .25;		//How long to wait in seconds between attempts to add menu items.
-ttl_canChain	= 0;		//Not implemented.
-//This is the directory that TTL will look for its files in. Keep in mind that the function files are
-//NOT prefixed if you move them around.
-ttl_loc			= "scripts\TTL_fnc\";
 
 diag_log text "TAHV_TTL: Settings initialized...";

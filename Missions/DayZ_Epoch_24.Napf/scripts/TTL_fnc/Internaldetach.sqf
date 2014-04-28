@@ -13,13 +13,17 @@ if (vehicle player getVariable ["isTowing", false]) then {
 _tVeh setVariable ["isTowing", false, true];
 _tVeh setVariable ["TowedName", objNull, true];
 _tVeh setVariable ["TowedObj", objNull, true];
-if (-1 != _ID) then {vehicle player removeAction _ID};
+vehicle player removeAction _ID;
 
+_vel = "";
+_tVel = "";
 if (!isNull _aVeh) then {
 	_t		= velocity _aVeh;
-	_vel 	= [_t select 0, _t select 2, _t select 1];
+	_vel 	= [_t select 0, _t select 1, (_t select 2) + 0.5];
+	_t		= velocity _tVeh;
+	_tVel 	= [_t select 0, _t select 1, (_t select 2)];
 	detach _aVeh;
-	_aVeh setVelocity _vel;
 	_aVeh setVariable ["TowedBy", objNull, true];
 	_aVeh setVariable ["beingTowed", false, true];
-}
+};
+_aVeh setVelocity _vel;
