@@ -39,8 +39,8 @@ if (_aVeh distance _tVeh <= ttl_towRadius) then {
 				(boundingBox _tVeh select 0 select 1),
 				(_tVeh worldToModel (player modelToWorld _pTBC)) select 2
 			]];
-			player setDir 270 + 30; //First at 90° to car, inwards, then rotated towards the hitch.
-			// player playMove "AinvPknlMstpSlayWrflDnon_medic";
+			player setDir 180; //Point at towed vehicle.
+			player playMove "AmovPercMstpSnonWnonDnon_exercisePushup";
 			sleep .5;
 
 			//Create the offsets, attach.

@@ -27,3 +27,5 @@ if (!isNull _aVeh) then {
 	_aVeh setVariable ["beingTowed", false, true];
 };
 _aVeh setVelocity _vel;
+diag_log formatText["TAHV_TTL: Velocity of detaching: %1", _vel];
+diag_log formatText["TAHV_TTL: Velocity tow/lifting: %1", _tVel];

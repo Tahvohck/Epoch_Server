@@ -13,4 +13,4 @@ _aVeh setVariable ["TowedBy", objNull, true];
 _aVeh setVariable ["beingTowed", false, true];
 vehicle player removeAction ttl_UntowOp;
 ttl_UntowOp = -1;
-player globalChat format["%1", _vel];
+diag_log formatText["TAHV_TTL: Velocity of detaching: %1", _vel];

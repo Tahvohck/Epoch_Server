@@ -95,7 +95,7 @@ while {ttl_inited} do {
 			_showDist	= sizeOf typeOf cursorTarget / 2;
 			//bound checks
 			if (_showDist < 6) then {_showDist = 6};
-			if (_showDist > 10) then {_showDist = 10};
+			if (_showDist > 17) then {_showDist = 17};
 			//remove all actions relating to the last vehicle
 			player removeAction ttl_TowOp;		ttl_TowOp = -1;
 			player removeAction ttl_UntowOp;	ttl_UntowOp = -1;
@@ -153,8 +153,10 @@ while {ttl_inited} do {
 				_title = format["<t color="+RED+">Quick detach</t>"];
 				ttl_QuickDetach = _currVeh addAction [_title,ttl_loc+"Internaldetach.sqf",[],0, false, false];
 			};
+			player globalChat format["%1", _towing];
 			//If towing and haven't added QD or Drop actions, add.
 			if (_towing && (ttl_DropOp + ttl_QuickDetach) == -2) then {
+				player globalChat "QD";
 				//Same effect, but different names in the scroll menu if we're lifting instead of towing.
 				if (_liftAbl != -1) then {
 					_liftName = _currVeh getVariable ["TowedName", ""];
