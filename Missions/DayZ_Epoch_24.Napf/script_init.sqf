@@ -8,5 +8,3 @@ execVM "scripts\DynamicWeatherEffects.sqf";		//Start Dynamic Weather
 execVM "scripts\TTL_fnc\TTL_Init.sqf"			//Tiered Towing and Lifting
 execVM "scripts\skaronametags.sqf";
 RUN "config\RandomLoadout.sqf";
-
-setViewDistance 2500;
