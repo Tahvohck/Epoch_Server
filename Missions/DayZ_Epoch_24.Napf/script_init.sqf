@@ -1,7 +1,3 @@
-if (isServer) then {
-	
-};
-
 if (!isDedicated) then {
 	execVM "scripts\service_point.sqf";
 	_nil = [] execVM "custom\VehicleKeyChanger\VehicleKeyChanger_init.sqf";

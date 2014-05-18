@@ -8,6 +8,10 @@ dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
 
+dayz_minpos = -1000; 
+dayz_maxpos = 26000;
+dayz_MapArea = 18500;		// Default = 10000
+
 //disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
 //disable radio messages to be heard and shown in the left lower corner of the screen
@@ -38,12 +42,7 @@ progressLoadingScreen 1.0;
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 
 if (isServer) then {
-	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\dynamic_vehicle.sqf";				
-	//Compile vehicle configs
-	
-	// Add trader citys
-	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
-	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+	call compile preprocessFileLineNumbers "\z\addons\dayz_server\server_init.sqf";
 };
 
 if (!isDedicated) then {

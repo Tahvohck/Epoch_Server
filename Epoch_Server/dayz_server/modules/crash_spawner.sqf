@@ -1,172 +1,100 @@
-/*
-Script Name: crash_spawner.sqf
-Original Author: Grafzahl / Finest
-Modified by BushWookie for Epoch
-Script Version: 1.1
-*/
- 
-private["_timeAdjust","_timeToSpawn","_spawnRoll","_crash","_hasAdjustment","_newHeight","_adjustedPos","_useStatic","_crashDamage","_lootRadius","_preWaypoints","_preWaypointPos","_endTime","_startTime","_safetyPoint","_heliStart","_deadBody","_exploRange","_heliModel","_lootPos","_list","_craters","_dummy","_wp2","_wp3","_landingzone","_aigroup","_wp","_helipilot","_crash","_crashwreck","_smokerand","_staticcoords","_pos","_dir","_position","_num","_config","_itemType","_itemChance","_weights","_index","_iArray","_crashModel","_lootTable","_guaranteedLoot","_randomizedLoot","_frequency","_variance","_spawnChance","_spawnMarker","_spawnRadius","_spawnFire","_permanentFire","_crashName"];
-//############### //Config Start\\ ###############\\
-_SpawnMax        = 100;                //Maximum percent chance of spawning a crash number between 0 - 100
-_SpawnMin        = 50;                //Minimum percent chance of spawning a crash number between 0 - 100
-_guaranteedLoot = 3;                //Guaranteed Loot Spawns
-_randomizedLoot = 4;                //Random number of loot piles aswell as the guaranteed ones
-_spawnFire      = true;                //Spawn Smoke/Fire at the helicrash
-_fadeFire      = false;            //Fade the Smoke/Fire overtime
-_preWaypoints    = 2;                //Amount of waypoints the heli flys to before crashing
-_crashDamage    = 1;                //Amount of dammage the heli can take before crashing (between 0.1 and 1) Lower the number and the heli can take less damage before crashing 1 dammage is fully destroyed and 0.1 something like a DMR could one shot the heli
-_exploRange    = 250;                //How far away from the predefined crash point should the heli start crashing
-_minLootRadius    = 4;                //Minimum distance for loot to spawn from the crash site in meters
-_maxLootRadius    = 10;                //Maximum distance for loot to spawn from the crash site in meters
-_lootTable        = "HeliCrash";        //Name of the loot table the heli gets loot from (DO NOT edit unless you know what your doing)
-//############### \\Config End// ###############\\
-//DO NOT edit below this unless you know what your doing
- 
-_heliModel        = ["UH1Y_DZE","UH1H_DZE","MV22","A10","Mi17_DZ"] call BIS_fnc_selectRandom;        //The type of heli used
-_crashModel    = "UH1Wreck_DZ";    //The type of Crash model used after the heli crashes
-_plane            = false;
- 
-if(_heliModel == "Mi17_DZ") then {
-    _crashModel    = "Mi8Wreck";
-};
- 
-if(_heliModel == "MV22") then {
-    _crashModel    = "MV22Wreck";
-    _plane            = true;
-};
- 
-if(_heliModel == "A10") then {
-    _crashModel    = "A10Wreck";
-    _plane            = true;
-};
- 
-_maxLootRadius = _maxLootRadius - _minLootRadius;
+private ["_guaranteedLoot","_randomizedLoot","_spawnChance","_spawnMarker","_spawnRadius","_spawnFire","_fadeFire","_crashModel","_lootTable","_crashName","_spawnRoll","_position","_crash","_config","_hasAdjustment","_newHeight","_adjustedPos","_num","_itemTypes","_index","_weights","_cntWeights","_nearby","_itemType","_needsrelocated","_istoomany"];
+
+_guaranteedLoot = 3;
+_randomizedLoot = 4;
+_spawnChance =  0.50;
+_spawnMarker = 'center';
+// _spawnRadius = 5000;
 _spawnRadius = HeliCrashArea;
-_heliStart = [[6986,-630,1000],[10450,-630,1000]] call BIS_fnc_selectRandom;
-_safetyPoint = [0,16000,0];
-_crashName= getText (configFile >> "CfgVehicles" >> _heliModel >> "displayName");
-_spawnMarker    = 'center';
-_spawnChance = _SpawnMax - _SpawnMin;
-_spawnChance = (random _spawnChance) + _SpawnMin;
-_spawnRoll = round(random 100);
-diag_log(format["CRASHSPAWNER: %1%2 chance to start a crashing %3 with loot table '%4'", _spawnChance, '%', _crashName, _lootTable]);
-if (_spawnRoll <= _spawnChance) then
-{
-    _position = [getMarkerPos _spawnMarker,0,_spawnRadius,10,0,2000,0] call BIS_fnc_findSafePos;
-    diag_log(format["CRASHSPAWNER: %1 started flying from %2 to %3 NOW!(TIME:%4||LT:%5)", _crashName,  str(_heliStart), str(_position), round(time), _lootTable]);
-    _startTime = time;
-    _crashwreck = createVehicle [_heliModel,_heliStart, [], 0, "FLY"];
-    _crashwreck setCombatMode "BLUE";
-    _crashwreck engineOn true;
-    if (_plane) then
-    {
-        _crashwreck flyInHeight 300;
-        _crashwreck forceSpeed 250;
-        _crashwreck setspeedmode "NORMAL";
-    }
-    else
-    {
-        _crashwreck flyInHeight 150;
-        _crashwreck forceSpeed 150;
-        _crashwreck setspeedmode "NORMAL";
-    };
-    _landingzone = createVehicle ["HeliHEmpty", [_position select 0, _position select 1,0], [], 0, "CAN_COLLIDE"];
-    _aigroup = creategroup civilian;
-    _helipilot = _aigroup createUnit ["SurvivorW2_DZ",getPos _crashwreck,[],0,"FORM"];
-    _helipilot setCombatMode "BLUE";
-    _helipilot moveindriver _crashwreck;
-    _helipilot assignAsDriver _crashwreck;
-    sleep 0.5;
-    if(_preWaypoints > 0) then
-    {
-        for "_x" from 1 to _preWaypoints do
-        {
-            _preWaypointPos = [getMarkerPos _spawnMarker,0,_spawnRadius,10,0,2000,0] call BIS_fnc_findSafePos;
-            _wp = _aigroup addWaypoint [_preWaypointPos, 0];
-            _wp setWaypointType "MOVE";
-            _wp setWaypointBehaviour "CARELESS";
-        };
-    };
- 
-    _wp2 = _aigroup addWaypoint [position _landingzone, 0];
-    _wp2 setWaypointType "MOVE";
-    _wp2 setWaypointBehaviour "CARELESS";
-    _wp2 setWaypointStatements ["true", "_crashwreck setdamage 1;"];
-    _wp3 = _aigroup addWaypoint [_safetyPoint, 0];
-    _wp3 setWaypointType "CYCLE";
-    _wp3 setWaypointBehaviour "CARELESS";
-    waituntil {(_crashwreck distance _position) <= 1000 || not alive _crashwreck || (getPosATL _crashwreck select 2) < 5 || (damage _crashwreck) >= _crashDamage};
-    if (_plane) then
-    {
-        _crashwreck flyInHeight 100;
-        _crashwreck forceSpeed 150;
-        _crashwreck setspeedmode "NORMAL";
-        _exploRange = 360;
-    }
-    else
-    {
-        _crashwreck flyInHeight 100;
-        _crashwreck forceSpeed 100;
-        _crashwreck setspeedmode "NORMAL";
-    };
-    waituntil {(_crashwreck distance _position) <= _exploRange || not alive _crashwreck || (getPosATL _crashwreck select 2) < 5 || (damage _crashwreck) >= _crashDamage};
-    if (_plane) then
-    {
-        _crashwreck setdamage 1;
-        _vel = velocity _crashwreck;
-        _dir = direction _crashwreck;
-        _speed = 100;
-        _crashwreck setVelocity [(_vel select 0)-(sin _dir*_speed),(_vel select 1)-(cos _dir*_speed),(_vel select 2) - 30];
-    }
-    else
-    {
-        _crashwreck setHit ["mala vrtule", 1];
-        _ran15 = random 15;
-        _crashwreck setVelocity [_ran15,_ran15,-25];
-        _crashwreck setdamage .9;
-        waitUntil{sleep 1; getpos _crashwreck select 2 <= 30};
-        _helipilot setdamage 1;
-        _crashwreck setVelocity [_ran15,_ran15,-20];
-        waitUntil{sleep 1; getpos _crashwreck select 2 <= 10};
-        _crashwreck setdamage 1;
-    };
-    waitUntil{sleep 1; getpos _crashwreck select 2 <= 5};
-    diag_log(format["CRASHSPAWNER: %1 just exploded at %2!, ", _crashName, str(getPosATL _crashwreck)]);
-    _pos = [getpos _crashwreck select 0, getpos _crashwreck select 1,0];
-    _dir = getdir _crashwreck;
-    heliCrash = _pos;
-    publicVariable "heliCrash";
-    deletevehicle _crashwreck;
-    deletevehicle _helipilot;
-    deletevehicle _landingzone;
-    _crash = createVehicle [_crashModel, _pos, [], 0, "CAN_COLLIDE"];
-    PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_crash];
-    if (_spawnFire) then
-    {
-        PVDZE_obj_Fire = [_crash,2,time,false,_fadeFire];
-        publicVariable "PVDZE_obj_Fire";
-        _crash setVariable ["fadeFire",_fadeFire,true];
-    };
-    _num = round(random _randomizedLoot) + _guaranteedLoot;
-    _config =        configFile >> "CfgBuildingLoot" >> _lootTable;
-    _itemTypes =    [] + getArray (_config >> "itemType");
-    _index =        dayz_CBLBase find toLower(_lootTable);
-    _weights =        dayz_CBLChances select _index;
-    _cntWeights = count _weights;
-    for "_x" from 1 to _num do
-    {
-        _maxLootRadius = (random _maxLootRadius) + _minLootRadius;
-        _lootPos = [_pos, _maxLootRadius, random 360] call BIS_fnc_relPos;
-        _index = floor(random _cntWeights);
-        _index = _weights select _index;
-        _itemType = _itemTypes select _index;
-        [_itemType select 0, _itemType select 1, _lootPos, 5] call spawn_loot;
-        diag_log(format["CRASHSPAWNER: Loot spawn at '%1' with loot table '%2'", _lootPos, _lootTable]);
-        _nearby = _pos nearObjects ["ReammoBox", sizeOf(_crashModel)];
-        {
-            _x setVariable ["permaLoot",true];
-        } forEach _nearBy;
-    };
-    _endTime = time - _startTime;
-    diag_log(format["CRASHSPAWNER: Crash completed! Wreck at: %2 - Runtime: %1 Seconds || Distance from calculated POC: %3 meters", round(_endTime), str(getPos _crash), round(_position distance _crash)]);
+_spawnFire = true;
+_fadeFire = false;
+
+_spawnRoll = random 1;
+if (_spawnRoll <= _spawnChance) then {
+
+	_crashModel = ["UH60Wreck_DZ","UH1Wreck_DZ","UH60_NAVY_Wreck_DZ","UH60_ARMY_Wreck_DZ","UH60_NAVY_Wreck_burned_DZ","UH60_ARMY_Wreck_burned_DZ","Mass_grave_DZ"] call BIS_fnc_selectRandom;
+
+	if(_crashModel == "Mass_grave_DZ") then {
+		_lootTable = "MassGrave";
+	} else {
+		_lootTable = "HeliCrash";
+	};
+
+	_crashName	= getText (configFile >> "CfgVehicles" >> _crashModel >> "displayName");
+
+	// Loop for a new location without any vehicles
+	_needsrelocated = true;
+	while {_needsrelocated} do {
+		_position = [getMarkerPos _spawnMarker,0,_spawnRadius,10,0,2000,0] call BIS_fnc_findSafePos;
+		_istoomany = _position nearObjects ["AllVehicles",10];
+		if((count _istoomany) == 0) then { _needsrelocated = false; };
+	};
+
+	//diag_log(format["CRASHSPAWNER: Spawning '%1' with loot table '%2' NOW! (%3) at: %4", _crashName, _lootTable, time, str(_position)]);
+
+	_crash = createVehicle [_crashModel,_position, [], 0, "CAN_COLLIDE"];
+	// Randomize the direction the wreck is facing
+	_crash setDir round(random 360);
+
+	// Using "custom" wrecks (using the destruction model of a vehicle vs. a prepared wreck model) will result
+	// in the model spawning halfway in the ground.  To combat this, an OPTIONAL configuration can be tied to
+	// the CfgVehicles class you've created for the custom wreck to define how high above the ground it should
+	// spawn.  This is optional.
+	_config = configFile >> "CfgVehicles" >> _crashModel >> "heightAdjustment";
+	_hasAdjustment =  isNumber(_config);
+	_newHeight = 0;
+	if (_hasAdjustment) then {
+		_newHeight = getNumber(_config);
+	};
+
+	// Must setPos after a setDir otherwise the wreck won't level itself with the terrain
+	_adjustedPos = [(_position select 0), (_position select 1), _newHeight];
+	//diag_log(format["DIAG: Designated Position: %1", str(_adjustedPos)]);
+	_crash setPos _adjustedPos;
+
+	// I don't think this is needed (you can't get "in" a crash), but it was in the original DayZ Crash logic
+	PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_crash];
+
+	_crash setVariable ["ObjectID","1",true];
+
+	// Disable simulation server side
+	_crash enableSimulation false;
+
+	_num = round(random _randomizedLoot) + _guaranteedLoot;
+
+	if(_crashModel == "Mass_grave_DZ") then {
+		_spawnFire = false;
+		_num = _num * 2;
+	};
+
+	if (_spawnFire) then {
+		//["PVDZE_obj_Fire",[_crash,2,time,false,_fadeFire]] call broadcastRpcCallAll;
+		PVDZE_obj_Fire = [_crash,2,time,false,_fadeFire];
+		publicVariable "PVDZE_obj_Fire";
+		_crash setvariable ["fadeFire",_fadeFire,true];
+	};
+
+	_config = 		configFile >> "CfgBuildingLoot" >> _lootTable;
+	if (DZE_MissionLootTable) then {
+		_config = missionConfigFile >> "CfgBuildingLoot" >> _lootTable;;
+	};
+	_itemTypes =	[] + getArray (_config >> "itemType");
+	_index =        dayz_CBLBase find toLower(_lootTable);
+	_weights =		dayz_CBLChances select _index;
+	_cntWeights = count _weights;
+
+	for "_x" from 1 to _num do {
+		//create loot
+		_index = floor(random _cntWeights);
+		_index = _weights select _index;
+		_itemType = _itemTypes select _index;
+		[_itemType select 0, _itemType select 1, _position, 5] call spawn_loot;
+		//diag_log(format["CRASHSPAWNER: Loot spawn at '%1' with loot table '%2'", _crashName, _lootTable]);
+	};
+
+	// ReammoBox is preferred parent class here, as WeaponHolder wouldn't match MedBox0 and other such items.
+	_nearby = _position nearObjects ["ReammoBox", sizeOf(_crashModel)];
+	{
+		_x setVariable ["permaLoot",true];
+	} forEach _nearBy;
 };

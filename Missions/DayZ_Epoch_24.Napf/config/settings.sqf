@@ -12,9 +12,6 @@ dayz_tameDogs = true;
 
 // Assorted Map settings
 dayz_fullMoonNights = false;
-dayz_minpos = -1000; 
-dayz_maxpos = 26000;
-dayz_MapArea = 18500;		// Default = 10000
 DZE_requireplot = 0;
 DZE_BuildOnRoads = false;	// Default: False
 
@@ -45,6 +42,6 @@ DZE_TRADER_SPAWNMODE = false; //Vehicles bought with traders will parachute in i
 
 //Events
 EpochEvents = 
-[["any","any","any","any",30,"crash_spawner"],
-["any","any","any","any",0,"crash_spawner"],
+[["any","any","any","any",30,"crash_spawner_ANIM"],
+["any","any","any","any",0,"crash_spawner_ANIM"],
 ["any","any","any","any",15,"supply_drop"]];

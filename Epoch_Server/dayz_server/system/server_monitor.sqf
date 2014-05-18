@@ -388,7 +388,6 @@ if (isServer and isNil "sm_done") then {
 	};
 
 	//Custom Scripts
-	[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
 	//End Custom Scripts
 	allowConnection = true;	
 	sm_done = true;
