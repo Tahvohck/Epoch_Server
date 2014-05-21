@@ -1,7 +1,7 @@
 //Server Bootup
-diag_log text "SERVER STATUS: Booting DZE server code."
+diag_log text "SERVER STATUS: Booting DZE server code.";
 //Compile vehicle configs
-call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\dynamic_vehicle.sqf";				
+call compile preprocessFileLineNumbers "\z\addons\dayz_server\Vehicle_List.sqf";
 // Add trader citys
 _nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
 if (isNil "sm_done") then {
@@ -10,5 +10,5 @@ if (isNil "sm_done") then {
 waitUntil {!isNil "sm_done"};
 
 //Launch modules
-diag_log text "SERVER STATUS: Boot done. Launching server-side modules."
+diag_log text "SERVER STATUS: Boot done. Launching server-side modules.";
 [] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
