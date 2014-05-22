@@ -1,37 +1,34 @@
-##################
-# CODING, SERVER #
-##################
-Mods Added
+###############
+# SERVER SIDE #
+###############
 	-Wicked AI
 		-Mission set https://www.dropbox.com/s/i5s3hghez8yg4t7/missions.zip
 	-MasterKey (server parts)
-		
-Mods Coded
+	-Remember Deathboard
 
 
-###################
-# CODING, MISSION #
-###################
-Set default spawn
+################
+# MISSION SIDE #
+################
+-Default spawn
 	-Hatchet
 	-Flashlight
 	-Food/drink, 1-3 each
 	-Bandages x4
 	-Morphine
 	-Backpack [random, small]
+-[Self] Randomized default loadout
+-[Self] Tiered Towing and Lifting
+-[Self] Removeable engines and fuel tanks (Warning, car will boom)
+
+-[Modified] Dynamic Weather Effects
 	
-Mods added
-	-Self Bloodbag
-	-Refuel Repair Rearm
-		-10oz silver refuel
-		-Rearm disabled
-	-R3F Arty and Logistics
-		-Arty Disabled
-	-Skaronator's nameplates
-	-MasterKey
-		-Claim vehicle: 50oz Silver
-		-Change locks: Tin bar
-	-Build Snapping
-	
-Mods coded
-	-Randomized default loadout
+-Self Bloodbag
+-Refuel Repair Rearm
+	#-10oz silver refuel
+	-Rearm disabled
+-Skaronator's nameplates
+-MasterKey
+	-Claim vehicle: 50oz Silver
+	-Change locks: Tin bar
+-Build Snapping

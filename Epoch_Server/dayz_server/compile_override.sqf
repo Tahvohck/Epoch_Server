@@ -1,0 +1,1 @@
+server_playerDied 	= compile preprocessFileLineNumbers "\z\addons\dayz_server\compile overrides\override_playerDied.sqf";

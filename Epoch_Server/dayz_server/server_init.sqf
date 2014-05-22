@@ -9,6 +9,13 @@ if (isNil "sm_done") then {
 
 waitUntil {!isNil "sm_done"};
 
+//Load stored death records if any
+PlayerDeaths = profileNamespace getVariable["StoredPDeaths", []];
+
+//Override server functions as needed
+diag_log text "SERVER STATUS: Overriding server functions as needed.";
+#include "\z\addons\dayz_server\compile_override.sqf"
+
 //Launch modules
-diag_log text "SERVER STATUS: Boot done. Launching server-side modules.";
+diag_log text "SERVER STATUS: Launching server-side modules.";
 [] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
