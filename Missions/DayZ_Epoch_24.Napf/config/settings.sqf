@@ -1,4 +1,5 @@
 // DayZ Epoch config
+SCRIPT_LOCATION = "scripts\";
 // Spawn
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500;			// Default = 1500

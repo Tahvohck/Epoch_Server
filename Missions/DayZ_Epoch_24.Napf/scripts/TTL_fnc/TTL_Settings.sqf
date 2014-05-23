@@ -3,7 +3,7 @@
 //##############
 //This is the directory that TTL will look for its files in. Keep in mind that the function files are
 //NOT prefixed if you move them around.
-ttl_loc			= "scripts\TTL_fnc\";
+ttl_loc			= SCRIPT_LOCATION + "TTL_fnc\";
 
 ttl_towRadius		= 30;	//Radius in meters within which towing works.
 ttl_minLiftHeight	= 5;	//Minimum height in meters that you must be off the ground to tow.
