@@ -64,4 +64,4 @@ if (!isDedicated) then {
 
 #include "script_init.sqf"
 
-setViewDistance 2500;
+setViewDistance 3500;

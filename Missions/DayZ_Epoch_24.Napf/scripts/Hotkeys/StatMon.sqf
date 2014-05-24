@@ -26,6 +26,7 @@ hintSilent parseText format[""
 	OPEN SML RGT YEL ">Humanity: </t>" OPEN SML RGT WHT ">%2</t><br/>"
 	OPEN SML LFT YEL ">Blood: </t>" OPEN SML LFT WHT ">%3%4</t>"
 	OPEN SML RGT YEL ">Players: </t>" OPEN SML RGT WHT ">%5</t><br/>"
+	OPEN SML CEN YEL ">Server uptime: </t>" OPEN SML CEN WHT ">%12:%13</t><br/>"
 	+"<br/>"
 	OPEN SML LFT YEL ">Zeds Killed: </t>" OPEN SML RGT WHT ">%6</t><br/>"
 	OPEN SML LFT YEL ">Bandits Killed: </t>" OPEN SML RGT WHT ">%7</t><br/>"
@@ -33,8 +34,7 @@ hintSilent parseText format[""
 	OPEN SML LFT YEL ">Headshots: </t>" OPEN SML RGT WHT ">%9</t><br/>"
 	+"<br/>"
 	OPEN SML CEN GRN ">%10</t>" OPEN SML CEN WHT ">  [FPS: %11]</t><br/>"
-	OPEN SML CEN RED ">http://HtHDayz.enjin.com</t><br/>"
-	OPEN SML CEN YEL ">Server uptime </t>" OPEN SML CEN WHT "> %12:%13</t><br/>",
+	OPEN SML CEN RED ">http://HtHDayz.enjin.com</t><br/>",
 	//Variables
 	dayz_Survived, player getVariable['humanity', 0],
 	floor (r_player_blood / 120), "%", count playableUnits,
