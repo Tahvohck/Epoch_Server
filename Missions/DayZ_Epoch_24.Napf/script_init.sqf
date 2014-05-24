@@ -1,6 +1,5 @@
 if (!isDedicated) then {
 	execVM (SCRIPT_LOCATION + "service_point.sqf");
-	execVM (SCRIPT_LOCATION + "Hotkeys\HK_Init.sqf");
 	_nil = [] execVM "custom\VehicleKeyChanger\VehicleKeyChanger_init.sqf";
 };
 
