@@ -1,10 +1,10 @@
 if (!isDedicated) then {
-	execVM "scripts\service_point.sqf";
+	execVM (SCRIPT_LOCATION + "service_point.sqf");
+	execVM (SCRIPT_LOCATION + "Hotkeys\HK_Init.sqf");
 	_nil = [] execVM "custom\VehicleKeyChanger\VehicleKeyChanger_init.sqf";
 };
 
-execVM "scripts\DynamicWeatherEffects.sqf";		//Start Dynamic Weather
-// execVM "R3F_ARTY_AND_LOG\init.sqf";			//R3F Artillery and Logistics
-execVM "scripts\TTL_fnc\TTL_Init.sqf"			//Tiered Towing and Lifting
-execVM "scripts\skaronametags.sqf";
+execVM (SCRIPT_LOCATION + "DynamicWeatherEffects.sqf");		//Start Dynamic Weather
+execVM (SCRIPT_LOCATION + "TTL_fnc\TTL_Init.sqf");			//Tiered Towing and Lifting
+execVM (SCRIPT_LOCATION + "skaronametags.sqf");
 RUN "config\RandomLoadout.sqf";
