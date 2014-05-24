@@ -1,7 +1,7 @@
 #define DIK_F3 0x3D
 #define DIK_END 0xCF
-waitUntil {dayz_preloadFinished};
-sleep 15;
+disableSerialization;
+waitUntil {(dayz_preloadFinished && !isNull (findDisplay 46))};
 diag_log text "TAHV: HotKey injection starting.";
 
 if !isNil "TAHV_HKEventHandler" then {
@@ -15,6 +15,8 @@ TAHV_HKParseKey = {
 	_shiftState	= _this select 2;
 	_ctrlState	= _this select 3;
 	_altState	= _this select 4;
+	if !(_DIKcode in [0x10,0x11,0x12,0x1E,0x1F,0x20,0x2C,0x2D,0x2E,0x1C,0x2A,0x38]) then {
+		diag_log formatText["TAHV_HK: Debug. Key code was %1", _DIKcode]};
 	
 	if (_DIKcode == DIK_F3 || _DIKcode == DIK_END) then {
 		execVM (TAHV_HKLoc + "StatMon.sqf");
