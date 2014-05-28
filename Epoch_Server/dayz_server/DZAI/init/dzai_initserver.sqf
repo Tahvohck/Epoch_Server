@@ -13,7 +13,7 @@ DZAI_isActive = true;
 _startTime = diag_tickTime;
 
 //Report DZAI version to RPT log
-#include "DZAI_version.hpp"
+#include "DZAI_version.sqf"
 #ifdef DZAI_MISSIONFILE_INSTALL
 	DZAI_directory = "DZAI";
 #else
