@@ -18,4 +18,5 @@ diag_log text "SERVER STATUS: Overriding server functions as needed.";
 
 //Launch modules
 diag_log text "SERVER STATUS: Launching server-side modules.";
-[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
+ExecVM "\z\addons\dayz_server\WAI\init.sqf";
+ExecVM "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
