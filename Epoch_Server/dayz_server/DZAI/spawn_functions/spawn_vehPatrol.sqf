@@ -6,7 +6,7 @@
 	Last updated: 5:59 PM 1/3/2014
 	
 */
-#define MAX_CARGO_COUNT 3
+#define MAX_CARGO_COUNT 8
 #define MAX_GUNNER_COUNT 2
 private ["_amount"];
 
@@ -35,7 +35,7 @@ for "_i" from 1 to _amount do {
 	_vehicle = createVehicle [_vehType, [_startPos select 0, _startPos select 1, 0], [], 0, "NONE"];
 	_vehicle setFuel 1;
 	_vehicle engineOn true;
-	_vehicle setVehicleLock "LOCKED";
+	// _vehicle setVehicleLock "LOCKED";
 
 	_nul = _vehicle call DZAI_protectObject;
 	clearWeaponCargoGlobal _vehicle;
