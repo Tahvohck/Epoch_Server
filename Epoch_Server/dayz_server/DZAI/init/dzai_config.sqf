@@ -73,7 +73,7 @@ DZAI_freeForAll = false;
 DZAI_findKiller = true;	
 
 //If normal probability check for spawning NVGs fails, then give AI temporary NVGs only if they are spawned with weapongrade 1 or higher (applies only during nighttime hours). Temporary NVGs are unlootable and will be removed at death (Default: false).									
-DZAI_tempNVGs = false;	
+DZAI_tempNVGs = true;	
 
 //Amount of humanity to reward player for killing an AI unit (Default: 0)									
 DZAI_humanityGain = 125;										
@@ -160,14 +160,20 @@ DZAI_airWeapons = [
 --------------------------------------------------------------------------------------------------------------------*/	
 
 //Maximum number of active AI land vehicle patrols. Set at 0 to disable (Default: 0).	
-DZAI_maxLandPatrols = 5;
+DZAI_maxLandPatrols = 15;
 
 //Set minimum and maximum wait time in seconds to respawn an AI vehicle patrol after vehicle is destroyed or disabled. (Default: Min 600, Max 900).
 DZAI_respawnTMinL = 600;
-DZAI_respawnTMaxL = 900;
+DZAI_respawnTMaxL = 1800;
 
 //Classnames of land vehicle types to use. (Default: "UAZ_Unarmed_TK_EP1")
-DZAI_vehTypes = ["UAZ_Unarmed_TK_EP1"];
+DZAI_vehTypes = [
+	"UAZ_Unarmed_TK_EP1",
+	"UralOpen_CDF", "UralOpen_INS", "UralCivil", "UralCivil2", "V3S_Civ", "KamazOpen",
+	"policecar", "car_sedan", "car_hatchback", "Skoda", "SkodaBlue", "SkodaRed", "SkodaGreen",
+	"HMMWV", 
+	"ArmoredSUV_PMC", "SUV_PMC",
+	"Ikarus_TK_CIV_EP1", "Ikarus"];
 
 
 /*	AI weapon selection settings
@@ -206,7 +212,7 @@ DZAI_invmedicals = 1;
 DZAI_invedibles = 1;	
 
 //Number of selections of medical items (Backpack)									
-DZAI_bpmedicals = 5; 	
+DZAI_bpmedicals = 3; 	
 
 //Number of selections of edible items (Backpack)									
 DZAI_bpedibles = 4;	
