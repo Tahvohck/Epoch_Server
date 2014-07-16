@@ -10,13 +10,6 @@ waitUntil{initialized}; //means all the functions are now defined
 diag_log "HIVE: Starting";
 
 waituntil{isNil "sm_done"}; // prevent server_monitor be called twice (bug during login of the first player)
-
-if (isNil "server_initCount") then {
-	server_initCount = 1;
-} else {
-	server_initCount = server_initCount + 1;
-};
-diag_log format["server_monitor.sqf execution count = %1", server_initCount];
 	
 // Custom Configs
 if(isnil "MaxVehicleLimit") then {
@@ -34,7 +27,7 @@ if(isnil "MaxMineVeins") then {
 };
 // Custon Configs End
 
-if (isServer and isNil "sm_done") then {
+if (isServer && isNil "sm_done") then {
 
 	serverVehicleCounter = [];
 	_hiveResponse = [];
@@ -68,7 +61,6 @@ if (isServer and isNil "sm_done") then {
 	
 		// save superkey
 		profileNamespace setVariable ["SUPERKEY",(_hiveResponse select 2)];
-		saveProfileNamespace;
 		
 		_hiveLoaded = true;
 	
@@ -179,7 +171,7 @@ if (isServer and isNil "sm_done") then {
 				};
 				// Test disabling simulation server side on buildables only.
 				_object enableSimulation false;
-				// used for inplace upgrades and lock/unlock of safe
+				// used for inplace upgrades && lock/unlock of safe
 				_object setVariable ["OEMPos", _pos, true];
 				
 			};
@@ -187,9 +179,9 @@ if (isServer and isNil "sm_done") then {
 			if (count _intentory > 0) then {
 				if (_type in DZE_LockedStorage) then {
 					// Fill variables with loot
-					_object setVariable ["WeaponCargo", (_intentory select 0)];
-					_object setVariable ["MagazineCargo", (_intentory select 1)];
-					_object setVariable ["BackpackCargo", (_intentory select 2)];
+					_object setVariable ["WeaponCargo", (_intentory select 0),true];
+					_object setVariable ["MagazineCargo", (_intentory select 1),true];
+					_object setVariable ["BackpackCargo", (_intentory select 2),true];
 				} else {
 
 					//Add weapons
@@ -205,7 +197,7 @@ if (isServer and isNil "sm_done") then {
 							_object addWeaponCargoGlobal [_x,(_objWpnQty select _countr)];
 						};
 						_countr = _countr + 1;
-					} forEach _objWpnTypes; 
+					} count _objWpnTypes; 
 				
 					//Add Magazines
 					_objWpnTypes = (_intentory select 1) select 0;
@@ -219,7 +211,7 @@ if (isServer and isNil "sm_done") then {
 							_object addMagazineCargoGlobal [_x,(_objWpnQty select _countr)];
 						};
 						_countr = _countr + 1;
-					} forEach _objWpnTypes;
+					} count _objWpnTypes;
 
 					//Add Backpacks
 					_objWpnTypes = (_intentory select 2) select 0;
@@ -231,7 +223,7 @@ if (isServer and isNil "sm_done") then {
 							_object addBackpackCargoGlobal [_x,(_objWpnQty select _countr)];
 						};
 						_countr = _countr + 1;
-					} forEach _objWpnTypes;
+					} count _objWpnTypes;
 				};
 			};	
 			
@@ -239,9 +231,9 @@ if (isServer and isNil "sm_done") then {
 				{
 					_selection = _x select 0;
 					_dam = _x select 1;
-					if (_selection in dayZ_explosiveParts and _dam > 0.8) then {_dam = 0.8};
+					if (_selection in dayZ_explosiveParts && _dam > 0.8) then {_dam = 0.8};
 					[_object,_selection,_dam] call object_setFixServer;
-				} forEach _hitpoints;
+				} count _hitpoints;
 
 				_object setFuel _fuel;
 
@@ -250,7 +242,7 @@ if (isServer and isNil "sm_done") then {
 					//_object setvelocity [0,0,1];
 					_object call fnc_veh_ResetEH;		
 					
-					if(_ownerID != "0" and !(_object isKindOf "Bicycle")) then {
+					if(_ownerID != "0" && !(_object isKindOf "Bicycle")) then {
 						_object setvehiclelock "locked";
 					};
 					
@@ -264,7 +256,7 @@ if (isServer and isNil "sm_done") then {
 			//Monitor the object
 			PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_object];
 		};
-	} forEach (_BuildingQueue + _objectQueue);
+	} count (_BuildingQueue + _objectQueue);
 	// # END SPAWN OBJECTS #
 
 	// preload server traders menu data into cache
@@ -387,8 +379,6 @@ if (isServer and isNil "sm_done") then {
 		endLoadingScreen;
 	};
 
-	//Custom Scripts
-	//End Custom Scripts
 	allowConnection = true;	
 	sm_done = true;
 	publicVariable "sm_done";

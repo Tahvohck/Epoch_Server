@@ -4,7 +4,7 @@ AllowedVehiclesList = [
 ["ArmoredSUV_PMC_DZE",1],
 ["ATV_CZ_EP1",3],
 ["ATV_US_EP1",3],
-["C130J_US_EP1",1],
+["C130J_US_EP1_DZ",1],
 ["car_hatchback",3],
 ["car_sedan",3],
 ["CH_47F_EP1_DZE",1],
@@ -110,5 +110,6 @@ AllowedVehiclesList = [
 ["Volha_1_TK_CIV_EP1",3],
 ["Volha_2_TK_CIV_EP1",3],
 ["VWGolf",3],
-["Zodiac",3]
+["Zodiac",3],
+["CH53_DZE",1]
 ];
