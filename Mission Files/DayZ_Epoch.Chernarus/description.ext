@@ -1,18 +1,18 @@
 respawn = "BASE";
 respawndelay = 5;
-onLoadMission= "DayZ Epoch Chernarus";
-OnLoadIntro = "Welcome to DayZ Epoch Chernarus";
+onLoadMission="DayZ Epoch";
+OnLoadIntro = "Welcome to Hell, suckers";
 OnLoadIntroTime = False;
 OnLoadMissionTime = False;
 disabledAI = true;
 disableChannels[]={0,2,6};
-enableItemsDropping = 0;
+enableItemsDropping=0;
 
 briefing = 0;
 debriefing = 0;
 
 onPauseScript = "";
-loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
+loadScreen = "LdScrn.jpg";
 
 class Header
 {
@@ -148,3 +148,5 @@ class DayZ_loadingScreen
 		};
 	};
 };
+
+#include "custom\snap_build\points.hpp"
