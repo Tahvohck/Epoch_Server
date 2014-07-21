@@ -3,7 +3,7 @@ diag_log text "SERVER STATUS: Booting DZE server code.";
 //Compile vehicle configs
 call compile preprocessFileLineNumbers "\z\addons\dayz_server\Vehicle_List.sqf";
 // Add trader citys
-_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
+_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\mission.sqf";
 if (isNil "sm_done") then {
 	_serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf"};
 
