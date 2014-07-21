@@ -5,7 +5,7 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_server\Vehicle_List.sqf";
 // Add trader citys
 _nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
 if (isNil "sm_done") then {
-	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf"};
+	_serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf"};
 
 waitUntil {!isNil "sm_done"};
 
@@ -18,5 +18,6 @@ diag_log text "SERVER STATUS: Overriding server functions as needed.";
 
 //Launch modules
 diag_log text "SERVER STATUS: Launching server-side modules.";
+ExecVM "\z\addons\dayz_server\init\AH.sqf";
 ExecVM "\z\addons\dayz_server\WAI\init.sqf";
 ExecVM "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
