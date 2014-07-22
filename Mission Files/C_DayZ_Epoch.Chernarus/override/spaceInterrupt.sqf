@@ -8,4 +8,9 @@ if (_dikCode == DIK_F3 || _DIKcode == DIK_END) then {
 	_handled = true;
 };
 
+//SNAP_PRO
+if ((_dikCode == 0x21 && (!_alt && !_ctrl)) || (_dikCode in actionKeys "User6")) then {
+	DZE_F = true;
+};
+//E_SNAP_PRO
 _handled 

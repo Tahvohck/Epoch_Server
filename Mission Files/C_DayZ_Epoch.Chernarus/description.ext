@@ -21,6 +21,8 @@ class Header
  maxPlayers = 100;            //Max # of players the mission supports
 };
 
+#include "scripts\snap_pro\snappoints.hpp"
+
 aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
@@ -148,5 +150,3 @@ class DayZ_loadingScreen
 		};
 	};
 };
-
-#include "custom\snap_build\points.hpp"

@@ -1,11 +1,10 @@
 //#include "\z\addons\dayz_code\init\compiles.sqf"
-#define OVERRIDE(FILE) compile preprocessFileLineNumbers ("override\" + FILE##);
+#define COMP compile preprocessFileLineNumbers
 
-fnc_usec_selfActions = OVERRIDE("fn_selfActions.sqf")
-dayz_spaceInterrupt = OVERRIDE("spaceInterrupt.sqf")
+fnc_usec_selfActions =	COMP "override\fn_selfActions.sqf";
+dayz_spaceInterrupt =	COMP "override\spaceInterrupt.sqf";
 
 if (!isDedicated) then {
-	player_build			= compile preprocessFileLineNumbers "custom\snap_build\player_build.sqf";
-	player_buildControls	= compile preprocessFileLineNumbers "custom\snap_build\player_buildControls.sqf";
-	snap_object				= compile preprocessFileLineNumbers "custom\snap_build\snap_object.sqf";
+	player_build	= COMP "scripts\snap_pro\player_build.sqf";
+	snap_build		= COMP "scripts\snap_pro\snap_build.sqf";
 };
