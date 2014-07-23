@@ -52,3 +52,5 @@ if (_luckyHiker) then {_wepsAndTools = _wepsAndTools + ["ItemMap"]};
 if (_luckyMechanic) then {_wepsAndTools = _wepsAndTools + ["ItemToolbox","ItemCrowbar"]};
 if (_luckyDigger) then {_wepsAndTools = _wepsAndTools + ["ItemEtool"]};
 if (_luckySeer) then {_wepsAndTools = _wepsAndTools + ["NVGoggles"]};
+
+DefaultWeapons = _wepsAndTools;
