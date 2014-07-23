@@ -14,7 +14,7 @@ dayz_tameDogs = true;
 // Assorted Map settings
 dayz_fullMoonNights = false;
 DZE_requireplot = 0;
-DZE_BuildOnRoads = false;	// Default: False
+DZE_BuildOnRoads = true;	// Default: False
 
 //Vehicles
 MaxVehicleLimit = 200;				// Default: 50
