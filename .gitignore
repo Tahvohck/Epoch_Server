@@ -2,3 +2,4 @@ Packed/
 *.lnk
 **/AH.sqf
 **/AHconfig.sqf
+~$*.xlsx
