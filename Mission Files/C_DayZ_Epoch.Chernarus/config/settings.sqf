@@ -3,7 +3,7 @@ SCRIPT_LOCATION = "scripts\";
 // Spawn
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500;			// Default = 1500
-dayz_paraSpawn = false;
+dayz_paraSpawn = true;
 
 // AI spawn
 dayz_maxLocalZombies = 30;	// Default = 30 
