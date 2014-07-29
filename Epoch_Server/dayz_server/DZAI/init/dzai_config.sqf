@@ -8,6 +8,8 @@
 
 diag_log "[DZAI] Reading DZAI configuration file.";
 
+DZAI_overrideEnabled = true;
+
 /*	DZAI Settings
 --------------------------------------------------------------------------------------------------------------------*/	
 
