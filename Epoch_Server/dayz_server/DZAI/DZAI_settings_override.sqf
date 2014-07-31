@@ -21,6 +21,10 @@
 	-------------------------(End of Example File)-------------------------
 */
 
+diag_log text "[STRACE][DZAI] Loading config override, file:";
+diag_log text "    " + __FILE__;
+diag_log formatText["    Vs. %1", DZAI_directory];
+
 //Add your preferred settings below this line.
 
 DZAI_weaponNoise = true;
@@ -129,4 +133,3 @@ DZAI_clientRadio = true;
 DZAI_zombieEnemy = true;	
 //Maximum distance for AI group leader to detect zombies. Increasing range beyond default may impact server performance. (Default: 150)							
 DZAI_zDetectRange = 100;									
-
