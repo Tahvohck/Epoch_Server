@@ -15,6 +15,11 @@ Modify compiles\server_playerLogin.sqf
 ###################
 # CODING, MISSION #
 ###################
+- Island bridge
+- Road end mines
+- Aircraft carrier
+
+
 Add:
 	
 	Spawn bike [Bill F'in Murray]
