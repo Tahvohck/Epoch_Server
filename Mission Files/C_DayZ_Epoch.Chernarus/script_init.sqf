@@ -8,3 +8,11 @@ execVM (SCRIPT_LOCATION + "TTL_fnc\TTL_Init.sqf");			//Tiered Towing and Lifting
 execVM (SCRIPT_LOCATION + "skaronametags.sqf");
 execVM "DZAI_Client\dzai_initclient.sqf";
 RUN (SCRIPT_LOCATION + "RandomLoadout.sqf");
+
+//##UID Based Custom Spawn Locations##
+p2_newspawn = compile preprocessFileLineNumbers (SCRIPT_LOCATION + "CustomSpawns.sqf");
+waitUntil {!isNil ("PVDZ_plr_LoginRecord")};
+if (dayzPlayerLogin2 select 2) then
+{
+    player spawn p2_newspawn;
+};
