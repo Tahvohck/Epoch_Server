@@ -7,6 +7,7 @@ if (!isDedicated) then {
 execVM (SCRIPT_LOCATION + "DynamicWeatherEffects.sqf");		//Start Dynamic Weather
 execVM (SCRIPT_LOCATION + "TTL_fnc\TTL_Init.sqf");			//Tiered Towing and Lifting
 execVM (SCRIPT_LOCATION + "skaronametags.sqf");
+execVM (SCRIPT_LOCATION + "Custom_selfactions.sqf");
 execVM "DZAI_Client\dzai_initclient.sqf";
 RUN (SCRIPT_LOCATION + "RandomLoadout.sqf");
 
