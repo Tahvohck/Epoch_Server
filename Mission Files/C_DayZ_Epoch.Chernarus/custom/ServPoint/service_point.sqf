@@ -5,7 +5,7 @@ private ["_folder","_servicePointClasses","_maxDistance","_actionTitleFormat","_
 // ---------------- CONFIG START ----------------
 
 // general settings
-_folder = "scripts\"; // folder where the service point scripts are saved, relative to the mission file
+_folder = SCRIPT_LOCATION + "ServPoint\"; // folder where the service point scripts are saved, relative to the mission file
 _servicePointClasses = dayz_fuelpumparray; // service point classes (can be house, vehicle and unit classes)
 _maxDistance = 10; // maximum distance from a service point for the options to be shown
 _actionTitleFormat = "%1 (%2)"; // text of the vehicle menu, %1 = action name (Refuel, Repair, Rearm), %2 = costs (see format below)
