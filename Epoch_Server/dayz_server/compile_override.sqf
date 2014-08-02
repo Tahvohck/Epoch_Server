@@ -1,4 +1,6 @@
-server_playerDied 	= compile preprocessFileLineNumbers "\z\addons\dayz_server\compile overrides\override_playerDied.sqf";
+#define COMP compile preprocessFileLineNumbers
+server_playerDied 	= COMP "\z\addons\dayz_server\compile overrides\override_playerDied.sqf";
+server_playerSetup  = COMP "\z\addons\dayz_server\compile overrides\override_playerSetup.sqf";
 
 TAHV_CrowsAfterWait	= {
 	_Pos	= _this select 0;
