@@ -1,7 +1,7 @@
 //#include "\z\addons\dayz_code\init\compiles.sqf"
 #define COMP compile preprocessFileLineNumbers
 
-fnc_usec_selfActions =	COMP "override\fn_selfActions.sqf";
+//fnc_usec_selfActions =	COMP "override\fn_selfActions.sqf";
 dayz_spaceInterrupt =	COMP "override\spaceInterrupt.sqf";
 
 if (!isDedicated) then {
