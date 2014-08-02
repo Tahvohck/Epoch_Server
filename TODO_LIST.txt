@@ -25,6 +25,8 @@ Edit:
 	
 	-Dynamic fuel prices
 	-MasterKey: Change this to "[] call player_checkAndRemoveItems" so that pricing is less stupid.
+	-Remove current "fn_selfActions.sqf" file and replace it with a custom one, so we don't have 
+		900+ uselessly overridden LOC.
 				
 		
 ################

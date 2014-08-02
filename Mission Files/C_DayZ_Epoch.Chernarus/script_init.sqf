@@ -1,5 +1,5 @@
 if (!isDedicated) then {
-	execVM (SCRIPT_LOCATION + "service_point.sqf");
+	execVM (SCRIPT_LOCATION + "ServPoint\service_point.sqf");
 	//_nil = [] execVM "custom\VehicleKeyChanger\VehicleKeyChanger_init.sqf";
 };
 
