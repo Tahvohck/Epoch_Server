@@ -1,3 +1,4 @@
+diag_log text "[DEBUG] Custom Selfactions file loaded.";
 _SAPre = "SelfActions\";
 _refreshPeriod = 0.25;
 
