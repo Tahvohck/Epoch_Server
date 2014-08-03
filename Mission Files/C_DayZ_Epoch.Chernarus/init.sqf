@@ -63,5 +63,8 @@ if (!isDedicated) then {
 
 setViewDistance 3500;
 if (!isDedicated) then {
-	spawn {sleep 15; endLoadingScreen; diag_log text "[TRACE] Forcing loading screen to close."}
-}
+	spawn {
+		sleep 15;
+		endLoadingScreen;
+		diag_log text "[TRACE] Forcing loading screen to close."};
+};
