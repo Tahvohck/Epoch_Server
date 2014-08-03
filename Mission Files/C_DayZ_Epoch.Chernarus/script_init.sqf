@@ -1,7 +1,10 @@
-waitUntil {!isNil ("PVDZ_plr_LoginRecord")};
 execVM (SCRIPT_LOCATION + "DynamicWeatherEffects.sqf");		//Start Dynamic Weather
 
+
 if (!isDedicated) then {
+	diag_log text "[TRACE][SI] Waiting for player record.";
+	waitUntil {!isNil ("PVDZE_plr_LoginRecord")};
+	diag_log text "[TRACE][SI] Player record found.";
 	execVM (SCRIPT_LOCATION + "ServPoint\service_point.sqf");
 	execVM (SCRIPT_LOCATION + "TTL_fnc\TTL_Init.sqf");			//Tiered Towing and Lifting
 	execVM (SCRIPT_LOCATION + "skaronametags.sqf");
