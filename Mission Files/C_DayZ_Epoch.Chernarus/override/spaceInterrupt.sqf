@@ -3,7 +3,7 @@
 #define DIK_END 0xCF
 _HKInjectionLoc = SCRIPT_LOCATION + "Hotkeys\";
 
-if (_dikCode == DIK_F3 || _DIKcode == DIK_END) then {
+if (_dikCode == DIK_F3 || _dikCode == DIK_END) then {
 	execVM (_HKInjectionLoc + "StatMon.sqf");
 	_handled = true;
 };
