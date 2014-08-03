@@ -62,9 +62,9 @@ if (!isDedicated) then {
 #include "script_init.sqf"
 
 setViewDistance 3500;
-if (!isDedicated) then {
-	spawn {
-		sleep 15;
-		endLoadingScreen;
-		diag_log text "[TRACE] Forcing loading screen to close."};
-};
+// if (!isDedicated) then {
+	// spawn {
+		// sleep 15;
+		// endLoadingScreen;
+		// diag_log text "[TRACE] Forcing loading screen to close."};
+// };
