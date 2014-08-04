@@ -1,6 +1,6 @@
-diag_log text "[DEBUG] Custom Selfactions file loaded.";
 _SAPre = "SelfActions\";
-_refreshPeriod = 0.25;
+_refreshPeriod = 0.5;
+_idx = 0;
 
 _a_plr_selfBB = -1;
 _l_selfBBLoc = (SCRIPT_LOCATION + _SAPre + "player_selfbloodbag.sqf");
@@ -25,6 +25,10 @@ while {1==1} do
 		player removeAction _a_plr_selfBB;
 		_a_plr_selfBB = -1;
 	};
+	//ESelfBB
 	
+	
+	_idx = _idx+1;
+	if (_idx > 1000) then {_idx = 0};
 	sleep _refreshPeriod;
 };
