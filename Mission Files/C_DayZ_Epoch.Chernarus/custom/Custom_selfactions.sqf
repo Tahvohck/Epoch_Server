@@ -2,7 +2,7 @@ _SAPre = "SelfActions\";
 _refreshPeriod = 0.5;
 _idx = 0;
 
-_a_plr_selfBB = -1;
+CSA_plr_selfBB = -1;
 _l_selfBBLoc = (SCRIPT_LOCATION + _SAPre + "player_selfbloodbag.sqf");
 
 while {1==1} do
@@ -18,12 +18,12 @@ while {1==1} do
 	
 	// Krixes Self Bloodbag
 	if((r_player_blood < 12000) && {_hasBloodBag} && {_canDo} && {(speed player <= 1)}) then {
-		if (_a_plr_selfBB < 0) then {
-			_a_plr_selfBB = player addAction[("<t color=""#c70000"">" + ("Self Bloodbag") +"</t>"),_l_selfBBLoc,"",5,false,true,"", ""];
+		if (CSA_plr_selfBB < 0) then {
+			CSA_plr_selfBB = player addAction[("<t color=""#c70000"">" + ("Self Bloodbag") +"</t>"),_l_selfBBLoc,"",5,false,true,"", ""];
 		};
 	} else {
-		player removeAction _a_plr_selfBB;
-		_a_plr_selfBB = -1;
+		player removeAction CSA_plr_selfBB;
+		CSA_plr_selfBB = -1;
 	};
 	//ESelfBB
 	
