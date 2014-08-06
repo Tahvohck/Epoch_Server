@@ -17,7 +17,7 @@ while {1==1} do
 	_hasBloodBag = "ItemBloodbag" in _mags;
 	
 	// Krixes Self Bloodbag
-	if((speed player <= 1) && _hasBloodBag && _canDo && (r_player_blood < 12000)) then {
+	if((r_player_blood < 12000) && {_hasBloodBag} && {_canDo} && {(speed player <= 1)}) then {
 		if (_a_plr_selfBB < 0) then {
 			_a_plr_selfBB = player addAction[("<t color=""#c70000"">" + ("Self Bloodbag") +"</t>"),_l_selfBBLoc,"",5,false,true,"", ""];
 		};
