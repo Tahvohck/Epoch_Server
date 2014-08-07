@@ -10,8 +10,8 @@ while {missionrunning} do {
 	_Marker = createMarker ["Mission", _position];
 	_Marker setMarkerColor "ColorRed";
 	_Marker setMarkerShape "ELLIPSE";
-	_Marker setMarkerBrush "Grid";
-	_Marker setMarkerSize [200,200];
+	_Marker setMarkerBrush "Solid";
+	_Marker setMarkerSize [300,300];
 	_Marker setMarkerText _name;
 	_dot = createMarker ["dot", _position];
 	_dot setMarkerColor "ColorBlack";

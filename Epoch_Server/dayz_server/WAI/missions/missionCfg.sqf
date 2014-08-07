@@ -2,38 +2,27 @@
 wai_mission_timer = 600;
 
 // How long before a mission times out (seconds)
-wai_mission_timeout = 3600;
+wai_mission_timeout = 1800;
 
 // missions used when selecting the next random mission
 wai_missions = [
+"bandit_base",
 "armed_vehicle",
-"banditbase",
-"BeachHead",
-"BridgeNowhere",
-"campharry",
-"Chatzbach",
-"convoy",
-"crash_spawner",
-"DeathValley",
 "disabled_civchopper",
+"crash_spawner",
 "disabled_milchopper",
-"Freidorf",
-"Lezburg",
-"Liestal",
-"Meggen",
 "MV22",
-"NapfCastle",
-"OfficeSpace",
-"Sachseln",
-"Schangen",
-"SniperTeam",
-"Sumrenfield",
-"UFO",
-"weapon_cache"
+"weapon_cache",
+"mayors_mansion",
+"convoy",
+"C130_crash",
+"ems_cache",
+"medi_camp",
+"Ural"
 ];
 
 // fuel the mission vehicles spawn with 0-100.
-wai_mission_fuel = 10;
+wai_mission_fuel = .5;
 
 // armed vehicles to spawn in missions
 armed_vehicle = [
@@ -124,7 +113,7 @@ civil_vehicles = [
 ];
 
 // Number of guns to spawn in ammo boxes 
-wai_mission_numberofguns = 4;
+wai_mission_numberofguns = 8;
 // classnames of guns to spawn in ammo boxes (only class weapons)
 ammo_box_guns = [
 "M9SD",
@@ -142,7 +131,7 @@ ammo_box_guns = [
 "M40A3",
 "Mk_48_DZ",
 "M240_DZ",
-"M249_EP1_DZ",
+"M249_DZ",
 "Pecheneg_DZ",
 "RPK_74",
 "BAF_LRR_scoped",
@@ -179,77 +168,11 @@ ammo_box_tools =[
 ];
 
 // Number of items to spawn in ammo boxes 
-wai_mission_numberofitems = 40;
+wai_mission_numberofitems = 10;
 // classnames of items to spawn in ammo boxes (only type magazine will work here)
 ammo_box_items =[
 "ItemBandage",
-"ItemPainkiller",
-"ItemMorphine",
-
-//17 possible food items
-"FoodMRE",
-"FoodPistachio",
-"FoodNutmix",
-"FoodCanBakedBeans",
-"FoodCanFrankBeans",
-"FoodCanSardines",
-"FoodCanPaste",
-"FoodCanGriff",
-"FoodCanBadguy",
-"FoodCanBoneboy",
-"FoodCanCorn",
-"FoodCanCurgon",
-"FoodCanFraggleos",
-"FoodCanHerpy",
-"FoodCanOrlok",
-"FoodCanPowell",
-"FoodCanTylers",
-
-//13 possible drink items
-"ItemWaterbottle",
-"ItemSodaCoke",
-"ItemSodaPepsi",
-"ItemSodaMdew",
-"ItemSodaMtngreen",
-"ItemSodaR4z0r",
-"ItemSodaClays",
-"ItemSodaSmasht",
-"ItemSodaDrwaste",
-"ItemSodaLemonade",
-"ItemSodaLvg",
-"ItemSodaMzly",
-"ItemSodaRabbit",
-
-//15 possible money items
-"ItemGoldBar10oz",
-"ItemGoldBar9oz",
-"ItemGoldBar8oz",
-"ItemGoldBar7oz",
-"ItemGoldBar6oz",
-"ItemGoldBar5oz",
-"ItemGoldBar4oz",
-"ItemGoldBar3oz",
-"ItemGoldBar2oz",
-"ItemGoldBar1oz",
-"ItemSilverBar10oz",
-"ItemSilverBar9oz",
-"ItemSilverBar8oz",
-"ItemSilverBar7oz",
-"ItemSilverBar1oz",
-
-"PartFueltank", "PartFueltank", "PartFueltank",
-"PartWheel",    "PartWheel",    "PartWheel",
-"PartGlass",    "PartGlass",    "PartGlass",
-"PartGeneric",  "PartGeneric",  "PartGeneric",
-"PartEngine",   "PartEngine",   "PartEngine",
-
-"PartPlankPack",
-"PartPlywoodPack",
-"CinderBlocks",
-
-"forest_net_kit",
-
-"ItemDocument"
+"ItemSodaCoke"
 ];
 
 //////////////////////////////////////////////////////////////////////

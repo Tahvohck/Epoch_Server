@@ -12,3 +12,6 @@ _box2 = createVehicle ["BAF_VehicleBox",[1,1,1], [], 0, "CAN_COLLIDE"];
 
 add custom ammo boxes below this line
 */
+
+_box = createVehicle ["BAF_VehicleBox",[0,0,0], [], 0, "CAN_COLLIDE"];
+[_box] call Extra_Large_Gun_Box;
