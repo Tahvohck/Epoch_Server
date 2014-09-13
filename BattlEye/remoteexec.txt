@@ -1,2 +1,3 @@
 //new
 5 "" !="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';" !="_this spawn fnc_plyrHit;"
+5 "slave = this; re_slave = group this;"
