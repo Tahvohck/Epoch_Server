@@ -15,6 +15,7 @@ dayz_tameDogs = true;
 dayz_fullMoonNights = false;
 DZE_requireplot = 0;
 DZE_BuildOnRoads = true;	// Default: False
+DZE_MissionLootTable = true;
 
 //Vehicles
 MaxVehicleLimit = 200;				// Default: 50
